@@ -144,6 +144,18 @@
                 android:src="@drawable/qrcode_scan"
                 android:theme="@style/Button.Login" />
 
+            <Space
+                android:id="@+id/qr_theme_spacer"
+                android:layout_width="match_parent"
+                android:layout_height="24dp" />
+
+            <Button
+                android:id="@+id/theme_button_login"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="@string/login_theme_button"
+                android:textColor="@color/login_text_color" />
+
         </LinearLayout>
 
     </LinearLayout>

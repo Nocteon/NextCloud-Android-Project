@@ -1111,4 +1111,6 @@
     <string name="sub_folder_rule_year">Year</string>
     <string name="sub_folder_rule_month">Year/Month</string>
     <string name="sub_folder_rule_day">Year/Month/Day</string>
+
+    <string name="login_theme_button">Theme</string>
 </resources>
