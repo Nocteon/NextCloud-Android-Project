@@ -4,6 +4,8 @@
   Copyright (C) 2012 Bartek Przybylski
   Copyright (C) 2015 ownCloud Inc.
 
+  Copyright (C) 2023 Chabeli Castano for FIU senior project
+
   This program is free software: you can redistribute it and/or modify
   it under the terms of the GNU General Public License version 2,
   as published by the Free Software Foundation.
@@ -19,10 +21,10 @@
 <resources>
 
     <color name="list_item_lastmod_and_filesize_text">@color/secondary_text_color</color>
-    <color name="black">#000000</color>
+    <color name="black">#212121</color>
     <color name="white">#ffffff</color>
-    <color name="white_helper_text">#B3FFFFFF</color>
-    <color name="text_color">#333333</color>
+    <color name="helper_text">#757575</color>
+    <color name="text_color">@color/fiu_dark_blue</color>
     <color name="drawer_text_color">@color/secondary_text_color</color>
     <color name="text_color_inverse">#ffffff</color>
     <color name="disabled_text">#ff888888</color>
@@ -33,6 +35,15 @@
     <color name="transparent">#00000000</color>
     <color name="secondary_text_color">#666666</color>
     <color name="highlight_textColor_Warning">#e53935</color>
+
+    <!-- FIU theme colors -->
+    <color name="fiu_dark_gold">#c4a733</color>
+    <color name="fiu_light_gold">#d6be5c</color>
+    <color name="fiu_dark_blue">#001D3D</color>
+    <color name="fiu_light_blue">#007EF5</color>
+    <color name="fiu_text_color">#212121</color>
+    <color name="fiu_color_accent">#b4c1de</color>
+
 
     <!-- Colors -->
     <color name="standard_grey">#757575</color>
@@ -46,15 +57,15 @@
     <color name="infolevel_warning">#e9322d</color>
 
     <!-- Colors -->
-    <color name="dark">#000000</color>
-    <color name="login_btn_tint">#ffffff</color>
-    <color name="login_btn_stroke">#ffffff</color>
-    <color name="bg_default">#FFFFFF</color>
+    <color name="dark">#001D3D</color>
+    <color name="login_btn_tint">#d6be5c</color>
+    <color name="login_btn_stroke">#d6be5c</color>
+    <color name="bg_default">#d6be5c</color>
     <color name="background_color_inverse">#000000</color>
-    <color name="primary_button_background_color">@color/color_accent</color>
-    <color name="primary_button_text_color">#ffffff</color>
-    <color name="secondary_button_background_color">#D6D7D7</color>
-    <color name="secondary_button_text_color">#000000</color>
+    <color name="primary_button_background_color">@color/fiu_dark_gold</color>
+    <color name="primary_button_text_color">@color/fiu_dark_blue</color>
+    <color name="secondary_button_background_color">@color/fiu_light_gold</color>
+    <color name="secondary_button_text_color">@color/fiu_dark_blue</color>
     <color name="nc_grey">#ededed</color>
     <color name="icon_on_nc_grey">#000000</color>
 

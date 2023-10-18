@@ -26,12 +26,12 @@
         <item name="actionModeStyle">@style/App.ActionMode</item>
         <item name="alertDialogTheme">@style/ownCloud.AlertDialog</item>
         <item name="android:alertDialogTheme">@style/ownCloud.AlertDialog</item>
-        <item name="android:textColor">@color/text_color</item>
-        <item name="android:textColorHint">@color/secondary_text_color</item>
-        <item name="android:textColorSecondary">@color/secondary_text_color</item>
-        <item name="colorAccent">@color/color_accent</item>
-        <item name="colorPrimary">@color/primary</item>
-        <item name="colorPrimaryDark">@color/primary_dark</item>
+        <item name="android:textColor">@color/fiu_dark_blue</item>
+        <item name="android:textColorHint">@color/fiu_dark_blue</item>
+        <item name="android:textColorSecondary">@color/fiu_dark_blue</item>
+        <item name="colorAccent">@color/fiu_color_accent</item>
+        <item name="colorPrimary">@color/fiu_dark_blue</item>
+        <item name="colorPrimaryDark">@color/fiu_dark_blue</item>
         <item name="colorSecondary">@color/secondary_text_color</item>
         <item name="searchViewStyle">@style/ownCloud.SearchView</item>
         <item name="android:actionModeBackground">@color/action_mode_background</item>
@@ -43,6 +43,32 @@
 
     <style name="Theme.ownCloud" parent="BaseTheme.ownCloud" />
 
+    <!-- FIU theme -->
+    <style name="Theme.FIU" parent="Theme.Material3.DayNight">
+        <!-- modify later in "styles" -->
+        <item name="actionBarStyle">@style/Theme.ownCloud.Widget.ActionBar</item>
+        <item name="android:actionBarStyle">@style/Theme.ownCloud.Widget.ActionBar</item>
+        <item name="actionBarPopupTheme">@style/ThemeOverlay.AppTheme.PopupMenu</item>
+        <item name="actionModeStyle">@style/App.ActionMode</item>
+        <item name="alertDialogTheme">@style/ownCloud.AlertDialog</item>
+        <item name="android:alertDialogTheme">@style/ownCloud.AlertDialog</item>
+        <item name="android:textColor">@color/fiu_dark_blue</item>
+        <!-- modify later-->
+        <item name="android:textColorHint">@color/secondary_text_color</item>
+        <item name="android:textColorSecondary">@color/secondary_text_color</item>
+        <item name="colorAccent">@color/fiu_color_accent</item>
+        <item name="colorPrimary">@color/fiu_light_blue</item>
+        <item name="colorPrimaryDark">@color/fiu_dark_blue</item>
+        <item name="colorSecondary">@color/secondary_text_color</item>
+        <item name="searchViewStyle">@style/ownCloud.SearchView</item>
+        <item name="android:actionModeBackground">@color/fiu_dark_gold</item>
+        <item name="android:datePickerDialogTheme">@style/FallbackDatePickerDialogTheme</item>
+        <item name="android:navigationBarColor">@color/fiu_dark_gold</item>
+        <item name="textInputStyle">@style/Widget.App.TextInputLayout</item>
+        <item name="dialogCornerRadius">@dimen/dialogBorderRadius</item>
+    </style>
+
+    <!-- changing navigationBarColor to fiu_dark_gold -->
     <style name="FallbackThemingThemeBase" parent="Theme.Material3.DayNight">
         <item name="actionModeBackground">@color/action_mode_background</item>
         <item name="android:alertDialogTheme">@style/FallbackTheming.Dialog</item>
@@ -54,7 +80,7 @@
         <item name="dialogTheme">@style/FallbackTheming.Dialog</item>
         <item name="android:actionModeBackground">@color/action_mode_background</item>
         <item name="android:datePickerDialogTheme">@style/FallbackDatePickerDialogTheme</item>
-        <item name="android:navigationBarColor">@color/bg_default</item>
+        <item name="android:navigationBarColor">@color/fiu_dark_gold</item>
         <item name="textInputStyle">@style/Widget.App.TextInputLayout</item>
         <item name="dialogCornerRadius">@dimen/dialogBorderRadius</item>
     </style>
@@ -285,11 +311,11 @@
         <item name="titleTextColor">@color/white</item>
     </style>
 
-    <!-- Launch screen -->
+    <!-- Launch screen - modified for FIU theme-->
     <style name="Theme.ownCloud.Launcher">
-        <item name="android:statusBarColor">@color/primary</item>
-        <item name="android:navigationBarColor">@color/primary</item>
-        <item name="android:windowBackground">@color/primary</item>
+        <item name="android:statusBarColor">@color/fiu_light_blue</item>
+        <item name="android:navigationBarColor">@color/fiu_dark_blue</item>
+        <item name="android:windowBackground">@color/fiu_dark_blue</item>
         <item name="android:textColorHint">@color/secondary_text_color</item>
     </style>
 
