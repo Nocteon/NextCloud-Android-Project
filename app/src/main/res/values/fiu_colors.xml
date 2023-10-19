@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+  Nextcloud Android client application
+
+  Copyright (C) 2023 Chabeli Castano for FIU senior project
+
+  This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU AFFERO GENERAL PUBLIC LICENSE
+License as published by the Free Software Foundation; either
+version 3 of the License, or any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU AFFERO GENERAL PUBLIC LICENSE for more details.
+
+You should have received a copy of the GNU Affero General Public
+License along with this program.  If not, see http://www.gnu.org/licenses/
+-->
+
+<resources>
+
+    <!-- prefix: fiu -->
+
+    <!-- FIU theme main colors -->
+    <color name="fiu_dark_gold">#B6862C</color>
+    <color name="fiu_light_gold">#d6be5c</color>
+    <color name="fiu_dark_blue">#081e3f </color>
+    <color name="fiu_light_blue">#5C80BC</color>
+    <color name="fiu_text_color">#060a21</color>
+    <color name="fiu_secondary_text_color">#394053</color>
+    <color name="fiu_color_accent">#FDB249</color>
+
+    <!-- Common black, white, and greys are declared in the original colors file -->
+
+    <!-- Other black, white, greys for the FIU theme-->
+    <color name="fiu_honeydew">#E1EFE6</color>
+    <color name="fiu_greyrose">#9D8CA1</color>
+    <color name="fiu_powder">#FBFEFB</color>
+
+    <!-- others -->
+    <color name="fiu_peach_yellow">#FFE19C</color>
+
+    <!-- specifics-->
+    <color name="fiu_list_item_lastmod_and_filesize_text">@color/fiu_secondary_text_color</color>
+    <color name="fiu_helper_text">@color/fiu_secondary_text_color</color>
+    <color name="fiu_drawer_text_color">@color/fiu_secondary_text_color</color>
+    <color name="fiu_text_color_inverse">@color/fiu_light_blue</color>
+    <color name="fiu_disabled_text">#ff888888</color>
+    <color name="fiu_list_divider_background">@color/fiu_light_gold</color>
+    <color name="fiu_fg_inverse">#FFFFFF</color>
+    <color name="fiu_filelist_icon_background">#DDDDDD</color>
+    <color name="fiu_dark_background_text_color">@color/fiu_light_blue</color>
+    <color name="fiu_transparent">#00000000</color>
+    <color name="fiu_highlight_textColor_Warning">#e53935</color>
+
+    <!-- level colors for info notifications/visualisations -->
+    <color name="fiu_infolevel_warning">#e9322d</color>
+
+    <!-- Colors -->
+    <color name="fiu_dark">#081e3f</color>
+    <color name="fiu_login_btn_tint">@color/fiu_light_gold</color>
+    <color name="fiu_login_btn_stroke">@color/fiu_light_gold</color>
+    <color name="fiu_bg_default">@color/fiu_light_gold</color>
+    <color name="fiu_background_color_inverse">@color/fiu_dark_blue</color>
+    <color name="fiu_primary_button_background_color">@color/fiu_dark_gold</color>
+    <color name="fiu_primary_button_text_color">@color/fiu_dark_blue</color>
+    <color name="fiu_secondary_button_background_color">@color/fiu_light_gold</color>
+    <color name="fiu_secondary_button_text_color">@color/fiu_dark_blue</color>
+    <color name="fiu_nc_grey">#ededed</color>
+    <color name="fiu_icon_on_nc_grey">#000000</color>
+
+    <color name="fiu_process_dialog_background">#ffffff</color>
+    <color name="fiu_indicator_dot_selected">#ffffff</color>
+    <color name="fiu_drawer_shadow">@color/fiu_dark_blue</color>
+
+    <color name="fiu_background_color_png">#FFFFFF</color>
+
+    <!-- special transparent action bar colors for image preview -->
+    <color name="fiu_color_transparent">#201D2D44</color>
+    <color name="fiu_color_dark_transparent">#40162233</color>
+
+    <!-- Multiselect backgrounds -->
+    <color name="fiu_action_mode_background">@color/fiu_dark_blue</color>
+    <color name="fiu_selected_item_background">#ECECEC</color>
+
+    <color name="fiu_drawer_menu_icon">#757575</color>
+    <color name="fiu_bg_fallback_highlight">#616161</color>
+    <color name="fiu_drawer_active_item_background">#80000000</color>
+
+    <!-- App bar -->
+    <color name="fiu_appbar">@color/fiu_light_gold</color>
+    <color name="fiu_fontAppbar">@color/fiu_dark_blue</color>
+    <color name="fiu_fontSecondaryAppbar">#A5A5A5</color>
+
+</resources>

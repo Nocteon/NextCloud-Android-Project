@@ -5,6 +5,8 @@
   Copyright (C) 2015 ownCloud Inc.
   Copyright (C) 2019 Chris Narkiewicz <hello@ezaquarii.com>
 
+  Copyright (C) 2023 Chabeli Castano for FIU senior projectpython
+
   This program is free software: you can redistribute it and/or modify
   it under the terms of the GNU General Public License version 2,
   as published by the Free Software Foundation.
@@ -505,4 +507,30 @@
         <item name="postSplashScreenTheme">@style/Theme.ownCloud.Launcher</item>
     </style>
 
+    <!-- FIU -->
+
+    <!-- General app style -->
+    <style name="BaseTheme.fiu" parent="Theme.Material3.DayNight">
+
+        <item name="actionBarStyle">@style/Theme.ownCloud.Widget.ActionBar</item>
+        <item name="android:actionBarStyle">@style/Theme.ownCloud.Widget.ActionBar</item>
+        <item name="actionBarPopupTheme">@style/ThemeOverlay.AppTheme.PopupMenu</item>
+        <item name="actionModeStyle">@style/App.ActionMode</item>
+        <item name="alertDialogTheme">@style/ownCloud.AlertDialog</item>
+        <item name="android:alertDialogTheme">@style/ownCloud.AlertDialog</item>
+
+        <item name="android:textColor">@color/fiu_text_color</item>
+        <item name="android:textColorHint">@color/secondary_text_color</item>
+        <item name="android:textColorSecondary">@color/secondary_text_color</item>
+        <item name="colorAccent">@color/color_accent</item>
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primary_dark</item>
+        <item name="colorSecondary">@color/secondary_text_color</item>
+        <item name="searchViewStyle">@style/ownCloud.SearchView</item>
+        <item name="android:actionModeBackground">@color/action_mode_background</item>
+        <item name="android:datePickerDialogTheme">@style/FallbackDatePickerDialogTheme</item>
+        <item name="android:navigationBarColor">@color/bg_default</item>
+        <item name="textInputStyle">@style/Widget.App.TextInputLayout</item>
+        <item name="dialogCornerRadius">@dimen/dialogBorderRadius</item>
+    </style>
 </resources>
