@@ -507,6 +507,7 @@
         <item name="postSplashScreenTheme">@style/Theme.ownCloud.Launcher</item>
     </style>
 
+    <!--  *********************************************************************************************** -->
     <!-- FIU -->
 
     <!-- General app style -->
@@ -520,17 +521,124 @@
         <item name="android:alertDialogTheme">@style/ownCloud.AlertDialog</item>
 
         <item name="android:textColor">@color/fiu_text_color</item>
-        <item name="android:textColorHint">@color/secondary_text_color</item>
-        <item name="android:textColorSecondary">@color/secondary_text_color</item>
-        <item name="colorAccent">@color/color_accent</item>
-        <item name="colorPrimary">@color/primary</item>
-        <item name="colorPrimaryDark">@color/primary_dark</item>
-        <item name="colorSecondary">@color/secondary_text_color</item>
+        <item name="android:textColorHint">@color/fiu_secondary_text_color</item>
+        <item name="android:textColorSecondary">@color/fiu_secondary_text_color</item>
+        <item name="colorAccent">@color/fiu_color_accent</item>
+        <item name="colorPrimary">@color/fiu_light_blue</item>
+        <item name="colorPrimaryDark">@color/fiu_dark_blue</item>
+        <item name="colorSecondary">@color/fiu_secondary_text_color</item>
+
         <item name="searchViewStyle">@style/ownCloud.SearchView</item>
-        <item name="android:actionModeBackground">@color/action_mode_background</item>
-        <item name="android:datePickerDialogTheme">@style/FallbackDatePickerDialogTheme</item>
-        <item name="android:navigationBarColor">@color/bg_default</item>
-        <item name="textInputStyle">@style/Widget.App.TextInputLayout</item>
+
+        <item name="android:actionModeBackground">@color/fiu_action_mode_background</item>
+        <item name="android:datePickerDialogTheme">@style/FiuFallbackDatePickerDialogTheme</item>
+        <item name="android:navigationBarColor">@color/fiu_bg_default</item>
+
+        <item name="textInputStyle">@style/Widget.App.Fiu.TextInputLayout</item>
+
         <item name="dialogCornerRadius">@dimen/dialogBorderRadius</item>
     </style>
+
+    <!-- ********************************************************************** -->
+
+    <style name="Theme.fiu" parent="BaseTheme.fiu" />
+
+    <!-- ********************************************************************** -->
+
+    <style name="FallbackFiuThemeBase" parent="Theme.Material3.DayNight">
+        <item name="actionModeBackground">@color/fiu_action_mode_background</item>
+
+        <item name="android:alertDialogTheme">@style/FallbackTheming.Dialog</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textColor">@color/fiu_text_color</item>
+        <item name="android:textColorSecondary">@color/fiu_secondary_text_color</item>
+        <item name="android:windowBackground">@color/bg_default</item>
+        <item name="colorSecondary">@color/fiu_secondary_text_color</item>
+
+        <item name="dialogTheme">@style/FallbackTheming.Dialog</item>
+
+        <item name="android:actionModeBackground">@color/fiu_action_mode_background</item>
+        <item name="android:datePickerDialogTheme">@style/FiuFallbackDatePickerDialogTheme</item>
+        <item name="android:navigationBarColor">@color/bg_default</item>
+        <item name="textInputStyle">@style/Widget.App.Fiu.TextInputLayout</item>
+        <item name="dialogCornerRadius">@dimen/dialogBorderRadius</item>
+    </style>
+
+    <style name="FallbackFiuTheme" parent="FallbackFiuThemeBase" />
+
+    <style name="Widget.App.Fiu.TextInputLayout" parent="Widget.Material3.TextInputLayout.OutlinedBox">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.Fiu.TextInputLayout</item>
+        <item name="hintTextColor">?attr/colorOnSurface</item>
+    </style>
+
+    <style name="ThemeOverlay.App.Fiu.TextInputLayout" parent="ThemeOverlay.Material3.TextInputEditText.OutlinedBox">
+        <item name="colorPrimary">@color/fiu_text_color</item>
+        <item name="colorOnSurface">@color/fiu_text_color</item>
+        <item name="colorError">@color/hwSecurityRed</item>
+        <item name="editTextStyle">@style/Widget.MaterialComponents.TextInputEditText.OutlinedBox</item>
+    </style>
+
+
+    <style name="FiuTextInputLayoutInputWarning" parent="Widget.App.Fiu.TextInputLayout">
+        <item name="colorError">@color/primary</item>
+    </style>
+
+    <style name="FiuFallbackDatePickerDialogTheme" parent="Theme.Material3.DayNight.Dialog">
+        <item name="colorPrimary">@color/fiu_dark_blue</item>
+        <item name="colorAccent">@color/fiu_color_accent</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:windowBackground">@color/bg_default</item>
+        <item name="android:textColor">@color/fiu_powder</item>
+        <item name="android:datePickerStyle">@style/FiuDatePickerStyle</item>
+    </style>
+
+    <!-- check datePickerMode later -->
+    <style name="FiuDatePickerStyle">
+        <item name="android:headerBackground">@color/fiu_bg_fallback_highlight</item>
+        <item name="android:datePickerMode">calendar</item>
+    </style>
+
+    <style name="FiuFallbackTheming.Dialog" parent="Theme.Material3.DayNight.Dialog">
+        <item name="colorPrimary">#525252</item>
+        <item name="colorPrimaryDark">#212121</item>
+        <item name="colorAccent">@color/fiu_color_accent</item>
+        <item name="windowNoTitle">false</item>
+        <item name="android:windowBackground">@color/bg_default</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="textInputStyle">@style/Widget.App.TextInputLayout</item>
+        <!-- go back here -->
+        <item name="android:buttonBarButtonStyle">@style/FallbackTheming.Dialog.ButtonStyle</item>
+    </style>
+
+    <style name="FiuFallbackTheming.Dialog.ButtonStyle" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
+        <item name="android:textColor">@color/fiu_text_color</item>
+    </style>
+
+    <!-- separate action bar style for activities without an action bar -->
+    <style name="FiuBaseTheme.ownCloud.Toolbar" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- go back here -->
+        <item name="alertDialogTheme">@style/ownCloud.AlertDialog</item>
+        <item name="android:alertDialogTheme">@style/Theme.ownCloud.Dialog</item>
+        <item name="android:colorBackground">@color/bg_default</item>
+        <item name="android:windowBackground">@color/bg_default</item>
+        <item name="colorAccent">@color/fiu_color_accent</item>
+        <item name="colorPrimary">@color/fiu_light_blue</item>
+        <item name="colorPrimaryDark">@color/fiu_light_blue</item>
+        <!-- go back here -->
+        <item name="searchViewStyle">@style/ownCloud.SearchView</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowActionModeOverlay">true</item>
+        <item name="windowNoTitle">true</item>
+        <item name="textInputStyle">@style/Widget.App.TextInputLayout</item>
+        <item name="popupMenuStyle">@style/Nextcloud.Widget.PopupMenu</item>
+        <item name="bottomSheetDialogTheme">@style/ThemeOverlay.App.BottomSheetDialog</item>
+        <item name="actionModeStyle">@style/App.ActionMode</item>
+    </style>
+
+
+
+
+
+
+
 </resources>
