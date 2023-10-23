@@ -80,4 +80,8 @@
     <color name="appbar">@android:color/white</color>
     <color name="fontAppbar">#666666</color>
     <color name="fontSecondaryAppbar">#A5A5A5</color>
+
+    <!-- Theme Button on Login Screen -->
+    <color name="login_theme_button_text">#FFFFFF</color>
+    <color name="login_theme_button_outline">#FFFFFF</color>
 </resources>

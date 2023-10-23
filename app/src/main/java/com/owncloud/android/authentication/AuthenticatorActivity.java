@@ -6,10 +6,12 @@
  * @author masensio
  * @author Mario Danic
  * @author TSI-mc
+ * @author Ralph Calixte
  * Copyright (C) 2012  Bartek Przybylski
  * Copyright (C) 2015 ownCloud Inc.
  * Copyright (C) 2017 Mario Danic
  * Copyright (C) 2023 TSI-mc
+ * Copyright (C) 2023 Ralph Calixte
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License version 2,
@@ -62,6 +64,7 @@ import android.os.IBinder;
 import android.preference.PreferenceManager;
 import android.text.TextUtils;
 import android.util.AndroidRuntimeException;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
@@ -119,6 +122,7 @@ import com.owncloud.android.services.OperationsService;
 import com.owncloud.android.services.OperationsService.OperationsServiceBinder;
 import com.owncloud.android.ui.NextcloudWebViewClient;
 import com.owncloud.android.ui.activity.FileDisplayActivity;
+import com.owncloud.android.ui.activity.LoginTheme;
 import com.owncloud.android.ui.dialog.IndeterminateProgressDialog;
 import com.owncloud.android.ui.dialog.SslUntrustedCertDialog;
 import com.owncloud.android.ui.dialog.SslUntrustedCertDialog.OnSslUntrustedCertListener;
@@ -551,7 +555,8 @@ public class AuthenticatorActivity extends AccountAuthenticatorActivity
         viewThemeUtils.platform.colorTextView(accountSetupBinding.authStatusText, ColorRole.ON_PRIMARY);
         viewThemeUtils.material.colorTextInputLayout(accountSetupBinding.hostUrlContainer, ColorRole.ON_PRIMARY);
         viewThemeUtils.platform.colorEditTextOnPrimary(accountSetupBinding.hostUrlInput);
-
+        //viewThemeUtils.platform.colorTextButtons(accountSetupBinding.themeButtonLogin);
+        accountSetupBinding.themeButtonLogin.setOnClickListener(view -> onThemeButtonClick()); //Test Functionality Function
         if (deviceInfo.hasCamera(this)) {
             accountSetupBinding.scanQr.setOnClickListener(v -> onScan());
             viewThemeUtils.platform.tintDrawable(this, accountSetupBinding.scanQr.getDrawable(), ColorRole.ON_PRIMARY);
@@ -1541,5 +1546,10 @@ public class AuthenticatorActivity extends AccountAuthenticatorActivity
     @Override
     public void onFailedSavingCertificate() {
         DisplayUtils.showSnackMessage(this, R.string.ssl_validator_not_saved);
+    }
+
+    public void onThemeButtonClick(){
+        Intent openThemePage = new Intent(this, LoginTheme.class); /**Class needs to be changed to new activity class that I havent created yet*/
+
     }
 }
