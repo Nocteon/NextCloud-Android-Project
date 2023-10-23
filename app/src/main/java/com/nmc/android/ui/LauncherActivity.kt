@@ -46,7 +46,6 @@ class LauncherActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         // Mandatory to call this before super method to show system launch screen for api level 31+
         installSplashScreen()
-
         super.onCreate(savedInstanceState)
 
         binding = ActivitySplashBinding.inflate(layoutInflater)

@@ -96,7 +96,7 @@
         android:requestLegacyExternalStorage="true"
         android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
-        android:theme="@style/Theme.ownCloud.Toolbar"
+        android:theme="@style/Fiu.Theme.ownCloud.Toolbar"
         android:usesCleartextTraffic="true"
         tools:replace="android:allowBackup"
         tools:ignore="UnusedAttribute">
@@ -110,7 +110,7 @@
             android:configChanges="orientation|screenSize"
             android:exported="true"
             android:launchMode="singleTop"
-            android:theme="@style/Theme.ownCloud.Launcher">
+            android:theme="@style/Theme.ownCloud.Launcher.Fiu">
             <intent-filter>
                 <action android:name="android.intent.action.SEARCH" />
             </intent-filter>
