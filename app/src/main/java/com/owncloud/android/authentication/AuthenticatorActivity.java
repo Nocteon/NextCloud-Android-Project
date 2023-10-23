@@ -122,7 +122,6 @@ import com.owncloud.android.services.OperationsService;
 import com.owncloud.android.services.OperationsService.OperationsServiceBinder;
 import com.owncloud.android.ui.NextcloudWebViewClient;
 import com.owncloud.android.ui.activity.FileDisplayActivity;
-import com.owncloud.android.ui.activity.LoginTheme;
 import com.owncloud.android.ui.dialog.IndeterminateProgressDialog;
 import com.owncloud.android.ui.dialog.SslUntrustedCertDialog;
 import com.owncloud.android.ui.dialog.SslUntrustedCertDialog.OnSslUntrustedCertListener;
@@ -1549,7 +1548,7 @@ public class AuthenticatorActivity extends AccountAuthenticatorActivity
     }
 
     public void onThemeButtonClick(){
-        Intent openThemePage = new Intent(this, LoginTheme.class); /**Class needs to be changed to new activity class that I havent created yet*/
+        Intent openThemePage = new Intent(this, QrCodeActivity.class); /**Class needs to be changed to new activity class that I havent created yet*/
 
     }
 }
