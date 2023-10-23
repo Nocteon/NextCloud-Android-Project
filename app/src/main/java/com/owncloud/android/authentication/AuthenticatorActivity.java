@@ -73,6 +73,7 @@ import android.webkit.CookieSyncManager;
 import android.webkit.WebResourceRequest;
 import android.webkit.WebResourceResponse;
 import android.webkit.WebView;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.TextView.OnEditorActionListener;
 import android.widget.Toast;
@@ -122,6 +123,7 @@ import com.owncloud.android.services.OperationsService;
 import com.owncloud.android.services.OperationsService.OperationsServiceBinder;
 import com.owncloud.android.ui.NextcloudWebViewClient;
 import com.owncloud.android.ui.activity.FileDisplayActivity;
+import com.owncloud.android.ui.activity.LoginThemeActivity;
 import com.owncloud.android.ui.dialog.IndeterminateProgressDialog;
 import com.owncloud.android.ui.dialog.SslUntrustedCertDialog;
 import com.owncloud.android.ui.dialog.SslUntrustedCertDialog.OnSslUntrustedCertListener;
@@ -554,8 +556,16 @@ public class AuthenticatorActivity extends AccountAuthenticatorActivity
         viewThemeUtils.platform.colorTextView(accountSetupBinding.authStatusText, ColorRole.ON_PRIMARY);
         viewThemeUtils.material.colorTextInputLayout(accountSetupBinding.hostUrlContainer, ColorRole.ON_PRIMARY);
         viewThemeUtils.platform.colorEditTextOnPrimary(accountSetupBinding.hostUrlInput);
-        //viewThemeUtils.platform.colorTextButtons(accountSetupBinding.themeButtonLogin);
-        accountSetupBinding.themeButtonLogin.setOnClickListener(view -> onThemeButtonClick()); //Test Functionality Function
+
+        Button themeButton = (Button)findViewById(R.id.theme_button_login);
+        themeButton.setOnClickListener(new View.OnClickListener() { //Test Functionality 2
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(AuthenticatorActivity.this,LoginThemeActivity.class);
+                startActivity(intent);
+            }
+        });
+
         if (deviceInfo.hasCamera(this)) {
             accountSetupBinding.scanQr.setOnClickListener(v -> onScan());
             viewThemeUtils.platform.tintDrawable(this, accountSetupBinding.scanQr.getDrawable(), ColorRole.ON_PRIMARY);
@@ -1548,7 +1558,7 @@ public class AuthenticatorActivity extends AccountAuthenticatorActivity
     }
 
     public void onThemeButtonClick(){
-        Intent openThemePage = new Intent(this, QrCodeActivity.class); /**Class needs to be changed to new activity class that I havent created yet*/
+        Intent openThemePage = new Intent(this, LoginThemeActivity.class); /**Class needs to be changed to new activity class that I havent created yet*/
 
     }
 }
