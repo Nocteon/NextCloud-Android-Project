@@ -96,7 +96,7 @@
         android:requestLegacyExternalStorage="true"
         android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
-        android:theme="@style/Fiu.Theme.ownCloud.Toolbar"
+        android:theme="@style/BaseTheme.fiu"
         android:usesCleartextTraffic="true"
         tools:replace="android:allowBackup"
         tools:ignore="UnusedAttribute">

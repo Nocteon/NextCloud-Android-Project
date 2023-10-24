@@ -247,7 +247,7 @@ public class AuthenticatorActivity extends AccountAuthenticatorActivity
 
     private boolean onlyAdd = false;
     @SuppressLint("ResourceAsColor") @ColorInt
-    private int primaryColor = R.color.primary;
+    private int primaryColor = R.color.fiu_light_gold;
     private boolean strictMode = false;
 
     private ViewThemeUtils viewThemeUtils;

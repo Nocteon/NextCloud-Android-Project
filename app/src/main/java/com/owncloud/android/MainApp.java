@@ -110,6 +110,7 @@ import javax.net.ssl.SSLEngine;
 import androidx.annotation.NonNull;
 import androidx.annotation.StringRes;
 import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.util.Pair;
 import androidx.multidex.MultiDexApplication;
@@ -290,7 +291,10 @@ public class MainApp extends MultiDexApplication implements HasAndroidInjector {
 
         viewThemeUtils = viewThemeUtilsProvider.get();
 
-        setAppTheme(preferences.getDarkThemeMode());
+       setAppTheme(preferences.getDarkThemeMode());
+
+        //setTheme(R.style.FiuBaseTheme_ownCloud_Toolbar);
+
         super.onCreate();
 
         insertConscrypt();
@@ -867,6 +871,10 @@ public class MainApp extends MultiDexApplication implements HasAndroidInjector {
 
 
     public static void setAppTheme(DarkMode mode) {
+        int cust = R.style.BaseTheme_fiu;
+        setCustomTheme(cust);
+        //setCustomTheme(cust);
+        /*
         switch (mode) {
             case LIGHT:
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
@@ -878,5 +886,17 @@ public class MainApp extends MultiDexApplication implements HasAndroidInjector {
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);
                 break;
         }
+
+         */
+    }
+
+    public static void setCustomTheme(int themeId) {
+        /*if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_AUTO_BATTERY);
+        }
+
+         */
+
+
     }
 }
