@@ -4,6 +4,7 @@
   Copyright (C) 2012  Bartek Przybylski
   Copyright (C) 2015 ownCloud Inc.
   Copyright (C) 2019 Chris Narkiewicz <hello@ezaquarii.com>
+  Copyright (C) 2023 Chabeli Castano for FIU senior project
 
   This program is free software: you can redistribute it and/or modify
   it under the terms of the GNU General Public License version 2,
@@ -488,7 +489,7 @@
     </style>
 
     <style name="App.ActionModeTitleText" parent="TextAppearance.Material3.ActionBar.Title">
-        <item name="android:textColor">@color/white</item>
+        <item name="android:textColor">@android:color/white</item>
     </style>
 
     <!-- Splash screen style attributes: https://developer.android.com/develop/ui/views/launch/splash-screen#set-theme -->
