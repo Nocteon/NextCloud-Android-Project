@@ -3,6 +3,7 @@ package com.owncloud.android.ui.activity;
     Nextcloud Android client application
 
     Copyright (C) 2023 Ralph Calixte for FIU senior project
+    Copyright (C) 2023 Chabeli Castano for FIU senior project
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU AFFERO GENERAL PUBLIC LICENSE
@@ -21,14 +22,13 @@ package com.owncloud.android.ui.activity;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 
-import android.content.Intent;
-import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 
 import com.owncloud.android.R;
-import com.owncloud.android.authentication.AuthenticatorActivity;
 
 public class LoginThemeActivity extends AppCompatActivity {
 
@@ -36,27 +36,29 @@ public class LoginThemeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_theme);
-        Button b = findViewById(R.id.themeSwapper);
-        b.setOnClickListener(new View.OnClickListener() { //Button 1 Dark mode
+
+        RadioGroup radioGroup = findViewById(R.id.radioGroup);
+        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
-            public void onClick(View view) {
-                themeSwitcher();
+            public void onCheckedChanged(RadioGroup radioGroup, int checked) {
+                RadioButton radioButton = findViewById(checked);
+
+                if (radioButton != null) {
+                    String selectedOption = radioButton.getText().toString();
+
+                    if (selectedOption.equals("FIU Light")) {
+                        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                    }
+                    if (selectedOption.equals("FIU Dark")) {
+                        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                    }
+                }
+
             }
         });
-        Button b2 = findViewById(R.id.themeSwapper2);
-        b2.setOnClickListener(new View.OnClickListener() { //Button 2 Light mode
-            @Override
-            public void onClick(View view) {
-                themeSwitcher2();
-            }
-        });
-    }
 
-    private void themeSwitcher(){
-        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-    }
-    private void themeSwitcher2(){
-        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-    }
+        Button backButton = findViewById(R.id.backButton);
+        // navigate back to previous activity
+        backButton.setOnClickListener(v -> onBackPressed());
+    }}
 
-}
