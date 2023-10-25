@@ -157,7 +157,7 @@
                 android:text="@string/login_theme_button"
                 android:textColor="@color/login_text_color"
                 app:cornerRadius="@dimen/login_theme_button_corner_radius"
-                app:strokeColor="@color/login_theme_button_text"
+                app:strokeColor="@color/login_text_color"
                 app:strokeWidth="@dimen/login_theme_button_outline" />
 
         </LinearLayout>
