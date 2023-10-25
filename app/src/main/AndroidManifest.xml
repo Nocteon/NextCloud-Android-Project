@@ -107,7 +107,7 @@
 
         <activity
             android:name=".ui.activity.LoginThemeActivity"
-            android:theme="@style/Theme.ownCloud.Launcher"
+            android:theme="@style/Theme.ownCloud.Toolbar"
             android:exported="false"
         />
 

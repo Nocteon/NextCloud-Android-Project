@@ -558,7 +558,7 @@ public class AuthenticatorActivity extends AccountAuthenticatorActivity
         viewThemeUtils.platform.colorEditTextOnPrimary(accountSetupBinding.hostUrlInput);
 
         Button themeButton = (Button)findViewById(R.id.theme_button_login);
-        themeButton.setOnClickListener(new View.OnClickListener() { //Test Functionality 2
+        themeButton.setOnClickListener(new View.OnClickListener() { //Opens LoginThemeActivity
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(AuthenticatorActivity.this,LoginThemeActivity.class);
