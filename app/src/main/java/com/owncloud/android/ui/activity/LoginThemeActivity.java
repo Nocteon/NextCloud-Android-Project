@@ -37,17 +37,26 @@ public class LoginThemeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_theme);
         Button b = findViewById(R.id.themeSwapper);
-        b.setOnClickListener(new View.OnClickListener() { //Opens LoginThemeActivity
+        b.setOnClickListener(new View.OnClickListener() { //Button 1 Dark mode
             @Override
             public void onClick(View view) {
                 themeSwitcher();
+            }
+        });
+        Button b2 = findViewById(R.id.themeSwapper2);
+        b2.setOnClickListener(new View.OnClickListener() { //Button 2 Light mode
+            @Override
+            public void onClick(View view) {
+                themeSwitcher2();
             }
         });
     }
 
     private void themeSwitcher(){
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-
+    }
+    private void themeSwitcher2(){
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
     }
 
 }

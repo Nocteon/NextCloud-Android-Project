@@ -24,18 +24,18 @@ License along with this program.  If not, see http://www.gnu.org/licenses/
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.activity.LoginThemeActivity">
-<!--
-    <TextView
-        android:id="@+id/textViewTester"
-        android:layout_width="400dp"
-        android:layout_height="500dp"
-        android:text="This will be the theming page"
-        app:autoSizeTextType="uniform"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
--->
+    <!--
+        <TextView
+            android:id="@+id/textViewTester"
+            android:layout_width="400dp"
+            android:layout_height="500dp"
+            android:text="This will be the theming page"
+            app:autoSizeTextType="uniform"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    -->
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="wrap_content"
@@ -63,10 +63,23 @@ License along with this program.  If not, see http://www.gnu.org/licenses/
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="128dp"
-        android:text="ThemeSwapper"
+        android:text="Dark mode"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.14"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.2" />
+
+    <Button
+        android:id="@+id/themeSwapper2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="128dp"
+        android:text="Light mode"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.765"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.2" />
