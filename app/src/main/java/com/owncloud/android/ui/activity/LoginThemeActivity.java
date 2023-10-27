@@ -48,6 +48,7 @@ public class LoginThemeActivity extends AppCompatActivity {
 
                     if (selectedOption.equals("FIU Light")) {
                         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+
                     }
                     if (selectedOption.equals("FIU Dark")) {
                         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);

@@ -26,6 +26,7 @@ License along with this program.  If not, see http://www.gnu.org/licenses/
     <!-- FIU theme main colors -->
     <color name="fiu_dark_gold">#B6862C</color>
     <color name="fiu_light_gold">#d6be5c</color>
+    <color name="fiu_lighter_gold">#e3d38c</color>
     <color name="fiu_dark_blue">#081e3f </color>
     <color name="fiu_light_blue">#5C80BC</color>
     <color name="fiu_text_color">#634818</color>

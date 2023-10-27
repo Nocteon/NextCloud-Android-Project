@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.activity.LoginThemeActivity"
-    android:background="@color/fiu_light_gold">
+    android:background="@drawable/theme_login_background">
 
 
     <RadioGroup
@@ -23,7 +23,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/fiu_light"
-            android:textColor="@color/fiu_dark_blue"
+            android:textColor="@color/dark"
             android:textSize="16sp"
             android:textStyle="bold" />
 
@@ -32,7 +32,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/fiu_dark"
-            android:textColor="@color/fiu_dark_blue"
+            android:textColor="@color/dark"
             android:textSize="16sp"
             android:textStyle="bold" />
     </RadioGroup>
@@ -42,11 +42,11 @@
         style="@style/Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/fiu_dark_blue"
+        android:backgroundTint="@color/theme_back_button_tint"
         android:text="Back"
-        android:textColor="@color/fiu_dark_gold"
+        android:textColor="@color/theme_back_button_text"
         android:textSize="16sp"
-        app:iconTint="@color/fiu_dark_blue"
+        app:iconTint="@color/theme_back_button_tint"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

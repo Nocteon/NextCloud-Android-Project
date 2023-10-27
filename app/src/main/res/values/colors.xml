@@ -81,4 +81,9 @@
     <color name="appbar">@android:color/white</color>
     <color name="fontAppbar">#666666</color>
     <color name="fontSecondaryAppbar">@color/fiu_cadetgray</color>
+
+    <!--Login page theme button background -->
+    <color name="background_theme_button">@color/fiu_lighter_gold</color>
+    <color name="theme_back_button_tint">@color/fiu_dark_blue</color>
+    <color name="theme_back_button_text">@color/fiu_dark_gold</color>
 </resources>
