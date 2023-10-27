@@ -23,6 +23,7 @@
 -->
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/scroll"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -30,7 +31,7 @@
     android:fillViewport="true"
     android:orientation="vertical">
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
@@ -41,18 +42,28 @@
             android:id="@+id/thumbnail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/standard_padding"
+            android:layout_marginBottom="24dp"
             android:contentDescription="@string/app_name"
-            android:src="@drawable/logo" />
+            android:src="@drawable/logo"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.812"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <LinearLayout
+            android:id="@+id/linearLayout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:gravity="center"
             android:maxWidth="@dimen/default_login_width"
             android:minWidth="@dimen/default_login_width"
-            android:gravity="center"
             android:orientation="vertical"
-            android:padding="@dimen/standard_half_padding">
+            android:padding="@dimen/standard_half_padding"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
 
             <FrameLayout
                 android:id="@+id/host_url_frame"
@@ -145,23 +156,29 @@
                 android:src="@drawable/qrcode_scan"
                 android:theme="@style/Button.Login" />
 
-            <Space
-                android:id="@+id/qr_theme_spacer"
-                android:layout_width="match_parent"
-                android:layout_height="24dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/login_theme_button_bottom_padding"
+            android:gravity="right"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
 
             <Button
                 android:id="@+id/theme_button_login"
-                android:layout_width="@dimen/login_theme_burron_width"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textStyle="normal"
+                android:textSize="@dimen/login_theme_button_font_size"
                 android:text="@string/login_theme_button"
                 android:textColor="@color/login_text_color"
-                app:cornerRadius="@dimen/login_theme_button_corner_radius"
-                app:strokeColor="@color/login_text_color"
-                app:strokeWidth="@dimen/login_theme_button_outline" />
-
+                app:cornerRadius="@dimen/login_theme_button_corner_radius" />
         </LinearLayout>
 
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </ScrollView>
