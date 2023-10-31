@@ -11,7 +11,8 @@
  * Copyright (C) 2015 ownCloud Inc.
  * Copyright (C) 2017 Mario Danic
  * Copyright (C) 2023 TSI-mc
- * Copyright (C) 2023 Ralph Calixte
+ * Copyright (C) 2023 Ralph Calixte for FIU Senior Project
+ * Copyright (C) 2023 Chabeli Castano for FIU Senior Project
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License version 2,
@@ -74,6 +75,7 @@ import android.webkit.WebResourceRequest;
 import android.webkit.WebResourceResponse;
 import android.webkit.WebView;
 import android.widget.Button;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.TextView.OnEditorActionListener;
 import android.widget.Toast;
@@ -252,7 +254,7 @@ public class AuthenticatorActivity extends AccountAuthenticatorActivity
 
     private boolean onlyAdd = false;
     @SuppressLint("ResourceAsColor") @ColorInt
-    private int primaryColor = R.color.primary;
+    private int primaryColor = R.color.fiu_primary;
     private boolean strictMode = false;
 
     private ViewThemeUtils viewThemeUtils;
@@ -548,6 +550,7 @@ public class AuthenticatorActivity extends AccountAuthenticatorActivity
     private void initOverallUi() {
         accountSetupBinding.hostUrlContainer.setEndIconOnClickListener(v -> checkOcServer());
 
+        /*
         accountSetupBinding.hostUrlInputHelperText.setText(
             String.format(getString(R.string.login_url_helper_text), getString(R.string.app_name)));
 
@@ -557,12 +560,37 @@ public class AuthenticatorActivity extends AccountAuthenticatorActivity
         viewThemeUtils.material.colorTextInputLayout(accountSetupBinding.hostUrlContainer, ColorRole.ON_PRIMARY);
         viewThemeUtils.platform.colorEditTextOnPrimary(accountSetupBinding.hostUrlInput);
 
+         */
+
         Button themeButton = (Button)findViewById(R.id.theme_button_login);
+        ScrollView scrollView = findViewById(R.id.scroll);
+
+        /*
+        Intent intent = getIntent();
+        String selectedOption = intent.getStringExtra("key");
+
+        if (selectedOption != null){
+            scrollView.setBackground(getDrawable(R.drawable.theme_login_background));
+        }
+
+
+
+        SharedPreferences preferences = getSharedPreferences("MyPreferences", Context.MODE_PRIVATE);
+        if (preferences != null){
+            int background = preferences.getInt("background", R.drawable.theme_login_background);
+            View rootView = getWindow().getDecorView().getRootView();
+            rootView.setBackgroundColor(background);
+
+        }
+
+         */
+
         themeButton.setOnClickListener(new View.OnClickListener() { //Test Functionality 2
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(AuthenticatorActivity.this,LoginThemeActivity.class);
                 startActivity(intent);
+                //scrollView.setBackground(getDrawable(R.drawable.theme_login_background));
             }
         });
 

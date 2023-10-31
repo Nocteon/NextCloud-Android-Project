@@ -29,8 +29,8 @@
         <item name="android:textColor">@color/text_color</item>
         <item name="android:textColorHint">@color/secondary_text_color</item>
         <item name="android:textColorSecondary">@color/secondary_text_color</item>
-        <item name="colorAccent">@color/color_accent</item>
-        <item name="colorPrimary">@color/primary</item>
+        <item name="colorAccent">@color/fiu_light_gold_dark_blue</item>
+        <item name="colorPrimary">@color/dark</item>
         <item name="colorPrimaryDark">@color/primary_dark</item>
         <item name="colorSecondary">@color/secondary_text_color</item>
         <item name="searchViewStyle">@style/ownCloud.SearchView</item>
@@ -67,14 +67,14 @@
     </style>
 
     <style name="ThemeOverlay.App.TextInputLayout" parent="ThemeOverlay.Material3.TextInputEditText.OutlinedBox">
-        <item name="colorPrimary">@color/text_color</item>
-        <item name="colorOnSurface">@color/text_color</item>
+        <item name="colorPrimary">@color/fiu_login_text_color</item>
+        <item name="colorOnSurface">@color/fiu_login_text_color</item>
         <item name="colorError">@color/hwSecurityRed</item>
         <item name="editTextStyle">@style/Widget.MaterialComponents.TextInputEditText.OutlinedBox</item>
     </style>
 
     <style name="TextInputLayoutInputWarning" parent="Widget.App.TextInputLayout">
-        <item name="colorError">@color/primary</item>
+        <item name="colorError">@color/fiu_login_text_color</item>
     </style>
 
     <style name="FallbackDatePickerDialogTheme" parent="Theme.Material3.DayNight.Dialog">
@@ -112,9 +112,9 @@
         <item name="android:alertDialogTheme">@style/Theme.ownCloud.Dialog</item>
         <item name="android:colorBackground">@color/bg_default</item>
         <item name="android:windowBackground">@color/bg_default</item>
-        <item name="colorAccent">@color/color_accent</item>
-        <item name="colorPrimary">@color/primary</item>
-        <item name="colorPrimaryDark">@color/primary</item>
+        <item name="colorAccent">@color/fiu_light_gold_dark_blue</item>
+        <item name="colorPrimary">@color/fiu_light_gold_dark_blue</item>
+        <item name="colorPrimaryDark">@color/fiu_light_gold_dark_blue</item>
         <item name="searchViewStyle">@style/ownCloud.SearchView</item>
         <item name="windowActionBar">false</item>
         <item name="windowActionModeOverlay">true</item>
@@ -287,15 +287,15 @@
 
     <!-- Launch screen -->
     <style name="Theme.ownCloud.Launcher">
-        <item name="android:statusBarColor">@color/primary</item>
-        <item name="android:navigationBarColor">@color/primary</item>
-        <item name="android:windowBackground">@color/primary</item>
+        <item name="android:statusBarColor">@color/fiu_light_gold_dark_blue</item>
+        <item name="android:navigationBarColor">@color/fiu_light_gold_dark_blue</item>
+        <item name="android:windowBackground">@color/fiu_light_gold_dark_blue</item>
         <item name="android:textColorHint">@color/secondary_text_color</item>
     </style>
 
     <style name="Theme.ownCloud.Widget.ActionBar" parent="@style/Theme.MaterialComponents.Light.DarkActionBar.Bridge">
-        <item name="android:background">@color/primary</item>
-        <item name="background">@color/primary</item>
+        <item name="android:background">@color/fiu_light_gold_dark_blue</item>
+        <item name="background">@color/fiu_light_gold_dark_blue</item>
         <item name="android:textColor">@color/text_color</item>
         <item name="android:shadowColor">@color/actionbar_shadow</item>
         <item name="android:shadowRadius">1</item>
@@ -366,8 +366,8 @@
     </style>
 
     <style name="ThemeOverlay.App.Login.TextInputLayout" parent="">
-        <item name="colorPrimary">@color/white</item>
-        <item name="colorOnSurface">@color/white</item>
+        <item name="colorPrimary">@color/fiu_login_text_color</item>
+        <item name="colorOnSurface">@color/fiu_login_text_color</item>
         <item name="colorError">@color/hwSecurityRed</item>
         <item name="textAppearanceSubtitle1">@style/TextAppearance.MaterialComponents.Subtitle1</item>
         <item name="textAppearanceCaption">@style/TextAppearance.MaterialComponents.Caption</item>
@@ -375,19 +375,19 @@
     </style>
 
     <style name="TextInputLayoutLogin" parent="Widget.Material3.TextInputLayout.OutlinedBox">
-        <item name="boxStrokeColor">@color/white</item>
-        <item name="boxStrokeErrorColor">@color/white</item>
+        <item name="boxStrokeColor">@color/fiu_login_text_color</item>
+        <item name="boxStrokeErrorColor">@color/fiu_login_text_color</item>
         <item name="hintTextAppearance">@style/HintTextLogin</item>
         <item name="errorTextAppearance">@style/HintTextLogin</item>
-        <item name="android:colorPrimary">@color/white</item>
+        <item name="android:colorPrimary">@color/fiu_login_text_color</item>
         <!-- Theme attributes -->
-        <item name="android:textColorHint">#80FFFFFF</item>
-        <item name="colorControlNormal">@color/white</item>
-        <item name="colorControlActivated">@color/white</item>
+        <item name="android:textColorHint">@color/fiu_login_text_color</item>
+        <item name="colorControlNormal">@color/fiu_login_text_color</item>
+        <item name="colorControlActivated">@color/fiu_login_text_color</item>
     </style>
 
     <style name="HintTextLogin" parent="TextAppearance.AppCompat">
-        <item name="android:textColor">@color/white</item>
+        <item name="android:textColor">@color/fiu_login_text_color</item>
     </style>
 
     <style name="ThemeOverlay.AppTheme.PopupMenu" parent="ThemeOverlay.Material3.Dark">
