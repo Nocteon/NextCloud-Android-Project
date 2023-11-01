@@ -58,6 +58,6 @@
     <color name="theme_back_button_tint">@color/fiu_dark_gold</color>
     <color name="theme_back_button_text">@color/fiu_dark_blue</color>
 
-    <color name="fiu_login_text_color">@color/fiu_dark_gold</color>
+    <color name="fiu_login_text_color">@color/fiu_light_gold</color>
     <color name="fiu_light_gold_dark_blue">@color/fiu_dark_blue</color>
 </resources>

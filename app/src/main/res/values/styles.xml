@@ -1,9 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?><!--
+<?xml version="1.0" encoding="utf-8"?>
+<!--
   ownCloud Android client application
 
   Copyright (C) 2012  Bartek Przybylski
   Copyright (C) 2015 ownCloud Inc.
   Copyright (C) 2019 Chris Narkiewicz <hello@ezaquarii.com>
+  Copyright (C) 2023 Chabeli Castano for FIU Senior Project
 
   This program is free software: you can redistribute it and/or modify
   it under the terms of the GNU General Public License version 2,
@@ -17,6 +19,7 @@
   You should have received a copy of the GNU General Public License
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 -->
+
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
     <!-- General ownCloud app style -->
     <style name="BaseTheme.ownCloud" parent="Theme.Material3.DayNight">
@@ -127,17 +130,17 @@
 
     <style name="Theme.ownCloud.ToolbarBase" parent="BaseTheme.ownCloud.Toolbar">
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
-        <item name="android:navigationBarColor">@color/bg_default</item>
+        <item name="android:navigationBarColor">@color/fiu_light_gold_dark_blue</item>
     </style>
 
     <style name="Theme.ownCloud.Toolbar" parent="Theme.ownCloud.ToolbarBase" />
 
     <style name="Theme.ownCloud.Toolbar.DrawerBase" parent="Theme.ownCloud.Toolbar">
-        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:statusBarColor">@color/fiu_light_gold_dark_blue</item>
     </style>
 
     <style name="Theme.ownCloud.Toolbar.Drawer" parent="Theme.ownCloud.Toolbar.DrawerBase">
-        <item name="android:navigationBarColor">@color/bg_default</item>
+        <item name="android:navigationBarColor">@color/fiu_light_gold_dark_blue</item>
     </style>
 
     <style name="Theme.ownCloud.Toolbar.NullBackground" parent="BaseTheme.ownCloud.Toolbar">
@@ -146,19 +149,19 @@
     </style>
 
     <style name="Theme.ownCloud.noActionBar.LoginBase" parent="Theme.ownCloud.Toolbar">
-        <item name="android:windowBackground">@color/primary</item>
+        <item name="android:windowBackground">@color/fiu_light_gold_dark_blue</item>
         <item name="colorControlNormal">@color/login_text_color</item>
         <item name="colorControlActivated">@color/login_text_color</item>
         <item name="colorControlHighlight">@color/login_text_color</item>
         <item name="colorAccent">@color/login_text_hint_color</item>
         <item name="android:textColorHint">@color/login_text_hint_color</item>
-        <item name="android:navigationBarColor">@color/primary</item>
+        <item name="android:navigationBarColor">@color/fiu_light_gold_dark_blue</item>
     </style>
 
     <style name="Theme.ownCloud.noActionBar.Login" parent="Theme.ownCloud.noActionBar.LoginBase" />
 
     <style name="ownCloud.AlertDialog" parent="Theme.Material3.DayNight.Dialog.Alert">
-        <item name="colorAccent">@color/color_accent</item>
+        <item name="colorAccent">@color/fiu_light_gold_dark_blue</item>
         <item name="searchViewStyle">@style/ownCloud.SearchView</item>
         <item name="android:textAllCaps">false</item>
         <item name="android:windowBackground">@color/bg_default</item>
@@ -494,7 +497,7 @@
     <!-- Splash screen style attributes: https://developer.android.com/develop/ui/views/launch/splash-screen#set-theme -->
     <style name="Theme.App.Starting" parent="Theme.SplashScreen">
         <!-- Set the splash screen background color -->
-        <item name="windowSplashScreenBackground">@color/primary</item>
+        <item name="windowSplashScreenBackground">@color/fiu_light_gold_dark_blue</item>
 
         <!-- Set the splash screen animated icon  -->
         <!-- Setting a transparent icon because of branding reason, showing icon is not accepted -->
