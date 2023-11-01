@@ -19,19 +19,25 @@ package com.owncloud.android.ui.activity;
     License along with this program.  If not, see http://www.gnu.org/licenses/
  */
 
+import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
 import com.owncloud.android.R;
 
 public class LoginThemeActivity extends AppCompatActivity {
-
+    private final int GALLERY_REQUEST_CODE = 1000;
+    ImageView imgTester;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,5 +67,31 @@ public class LoginThemeActivity extends AppCompatActivity {
         Button backButton = findViewById(R.id.backButton);
         // navigate back to previous activity
         backButton.setOnClickListener(v -> onBackPressed());
-    }}
+
+        imgTester = findViewById(R.id.image_tester);
+        Button uploadTester = findViewById(R.id.upload_tester);
+        uploadTester.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent galleryTest = new Intent(Intent.ACTION_PICK);
+                galleryTest.setData(MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                startActivityForResult(galleryTest,GALLERY_REQUEST_CODE);
+            }
+        });
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(resultCode == RESULT_OK){
+
+            if(requestCode==GALLERY_REQUEST_CODE){
+                // For Gallery
+                imgTester.setImageURI(data.getData());
+                
+            }
+        }
+    }
+}
+
 
