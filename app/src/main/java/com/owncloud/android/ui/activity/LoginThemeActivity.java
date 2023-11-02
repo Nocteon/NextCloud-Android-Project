@@ -24,9 +24,15 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 
+import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.ParcelFileDescriptor;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -35,9 +41,16 @@ import android.widget.RadioGroup;
 
 import com.owncloud.android.R;
 
+import java.io.File;
+import java.io.FileDescriptor;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
 public class LoginThemeActivity extends AppCompatActivity {
     private final int GALLERY_REQUEST_CODE = 1000;
     ImageView imgTester;
+    Bitmap imageBitmap;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -69,6 +82,16 @@ public class LoginThemeActivity extends AppCompatActivity {
         backButton.setOnClickListener(v -> onBackPressed());
 
         imgTester = findViewById(R.id.image_tester);
+
+        //imageView experimental work
+        File filePath = this.getFileStreamPath("profile2333.png");
+        if (filePath.exists()){
+            Bitmap testBitmap = readFromInternalStorage("profile2333.png");
+            Log.d("Image File Found", "CONFIRMATION THAT THE BITMAP FILE IS FOUND AND READ"); //DEBUG MESSAGE
+            imgTester.setImageBitmap(testBitmap);
+        }
+
+
         Button uploadTester = findViewById(R.id.upload_tester);
         uploadTester.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -87,10 +110,55 @@ public class LoginThemeActivity extends AppCompatActivity {
 
             if(requestCode==GALLERY_REQUEST_CODE){
                 // For Gallery
-                imgTester.setImageURI(data.getData());
-                
+                Uri imageURIfromGallery = data.getData();
+                imgTester.setImageURI(imageURIfromGallery);
+                uriToBitmap(imageURIfromGallery);
+                saveToInternalStorage(imageBitmap);
             }
         }
+    }
+
+
+    //FROM STACKOVERFLOW: https://stackoverflow.com/questions/38465377/make-uploaded-image-remain-after-layout-activity-change
+    private void uriToBitmap(Uri selectedFileUri) {
+        try {
+            ParcelFileDescriptor parcelFileDescriptor =
+                getContentResolver().openFileDescriptor(selectedFileUri, "r");
+            FileDescriptor fileDescriptor = parcelFileDescriptor.getFileDescriptor();
+            imageBitmap = BitmapFactory.decodeFileDescriptor(fileDescriptor);
+
+            parcelFileDescriptor.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    //FROM STACKOVERFLOW: https://stackoverflow.com/questions/38465377/make-uploaded-image-remain-after-layout-activity-change
+    private boolean saveToInternalStorage(Bitmap image) {
+
+        try {
+            FileOutputStream fos = this.openFileOutput("profile2333.png", Context.MODE_PRIVATE);
+
+            image.compress(Bitmap.CompressFormat.PNG, 100, fos);
+            fos.close();
+
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+
+    //FROM STACKOVERFLOW: https://stackoverflow.com/questions/38465377/make-uploaded-image-remain-after-layout-activity-change
+    private Bitmap readFromInternalStorage(String filename){
+        try {
+            File filePath = this.getFileStreamPath(filename);
+            FileInputStream fi = new FileInputStream(filePath);
+            return BitmapFactory.decodeStream(fi);
+        } catch (Exception ex) { /* do nothing here */}
+
+        return null;
     }
 }
 
