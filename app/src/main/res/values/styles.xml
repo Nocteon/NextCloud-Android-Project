@@ -192,8 +192,8 @@
     </style>
 
     <style name="Button" parent="Widget.Material3.Button.UnelevatedButton">
-        <item name="colorButtonNormal">@color/secondary_button_background_color</item>
-        <item name="android:textColor">@color/secondary_button_text_color</item>
+        <item name="colorButtonNormal">@color/black</item>
+        <item name="android:textColor">@color/black</item>
         <item name="android:textAllCaps">false</item>
         <item name="android:typeface">sans</item>
         <item name="android:textStyle">bold</item>
@@ -209,7 +209,7 @@
 
     <style name="OutlineLoginButton" parent="Widget.Material3.Button.OutlinedButton">
         <item name="colorAccent">@color/transparent</item>
-        <item name="android:textColor">@color/fg_inverse</item>
+        <item name="android:textColor">@color/theme_back_button_text</item>
         <item name="android:textAllCaps">false</item>
         <item name="strokeColor">@color/login_btn_stroke</item>
     </style>
@@ -222,9 +222,9 @@
     </style>
 
     <style name="Button.Login" parent="Button">
-        <item name="colorButtonNormal">@color/login_btn_tint</item>
-        <item name="colorAccent">@color/login_btn_tint</item>
-        <item name="android:textColor">@color/primary_dark</item>
+        <item name="colorButtonNormal">@color/black</item>
+        <item name="colorAccent">@color/black</item>
+        <item name="android:textColor">@color/theme_back_button_text</item>
         <item name="android:typeface">sans</item>
         <item name="android:textStyle">bold</item>
     </style>

@@ -576,12 +576,6 @@ public class AuthenticatorActivity extends AccountAuthenticatorActivity
             getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.fiu_light_gold_dark_blue));
         }
 
-        ImageButton qrCode = findViewById(R.id.scan_qr);
-        Drawable drawable = ContextCompat.getDrawable(this, R.drawable.qrcode_scan);
-        drawable.mutate().setColorFilter(getResources().getColor(R.color.theme_back_button_tint), PorterDuff.Mode.MULTIPLY);
-        qrCode.setImageResource(R.drawable.qrcode_scan);
-
-
         Button themeButton = (Button)findViewById(R.id.theme_button_login);
 
         themeButton.setOnClickListener(new View.OnClickListener() {

@@ -60,4 +60,5 @@
 
     <color name="fiu_login_text_color">@color/fiu_light_gold</color>
     <color name="fiu_light_gold_dark_blue">@color/fiu_dark_blue</color>
+    <color name="fiu_dark_gold_light_gold">@color/fiu_light_gold</color>
 </resources>
