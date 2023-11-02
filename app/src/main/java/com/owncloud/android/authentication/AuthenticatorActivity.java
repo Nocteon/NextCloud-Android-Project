@@ -11,7 +11,7 @@
  * Copyright (C) 2015 ownCloud Inc.
  * Copyright (C) 2017 Mario Danic
  * Copyright (C) 2023 TSI-mc
- * Copyright (C) 2023 Ralph Calixte
+ * Copyright (C) 2023 Ralph Calixte for FIU Senior Project
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License version 2,
