@@ -779,6 +779,13 @@ public class AuthenticatorActivity extends AccountAuthenticatorActivity
         if (mOperationsServiceBinder != null) {
             doOnResumeAndBound();
         }
+        ImageView logo = findViewById(R.id.thumbnail);
+        File filePath = getFileStreamPath("logoTest.png");
+        if (filePath.exists()){
+            Bitmap testBitmap = readFromInternalStorage("logoTest.png");
+            Log.d("Image File Found", "CONFIRMATION THAT THE BITMAP FILE IS FOUND AND READ"); //DEBUG MESSAGE
+            logo.setImageBitmap(testBitmap);
+        }
     }
 
 

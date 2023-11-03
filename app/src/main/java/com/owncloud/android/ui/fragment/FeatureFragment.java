@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
+import android.media.Image;
 import android.os.Bundle;
 import android.text.SpannableString;
 import android.text.Spanned;
@@ -157,5 +158,17 @@ public class FeatureFragment extends Fragment implements Injectable {
         } catch (Exception ex) { /* do nothing here */}
 
         return null;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        File filePath = this.getContext().getFileStreamPath("logoTest.png");
+        ImageView whatsNewImage = getView().findViewById(R.id.whatsNewImage);
+        if (filePath.exists()){
+            Bitmap testBitmap = readFromInternalStorage("logoTest.png");
+            Log.d("Image File Found", "CONFIRMATION THAT THE BITMAP FILE IS FOUND AND READ"); //DEBUG MESSAGE
+            whatsNewImage.setImageBitmap(testBitmap);
+        }
     }
 }
