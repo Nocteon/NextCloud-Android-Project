@@ -100,9 +100,9 @@ public class LoginThemeActivity extends AppCompatActivity {
         imgTester = findViewById(R.id.image_tester);
 
         //imageView experimental work
-        File filePath = this.getFileStreamPath("profile2333.png");
+        File filePath = this.getFileStreamPath("logoTest.png");
         if (filePath.exists()){
-            Bitmap testBitmap = readFromInternalStorage("profile2333.png");
+            Bitmap testBitmap = readFromInternalStorage("logoTest.png");
             Log.d("Image File Found", "CONFIRMATION THAT THE BITMAP FILE IS FOUND AND READ"); //DEBUG MESSAGE
             imgTester.setImageBitmap(testBitmap);
         }
@@ -160,7 +160,7 @@ public class LoginThemeActivity extends AppCompatActivity {
     private boolean saveToInternalStorage(Bitmap image) {
 
         try {
-            FileOutputStream fos = this.openFileOutput("profile2333.png", Context.MODE_PRIVATE);
+            FileOutputStream fos = this.openFileOutput("logoTest.png", Context.MODE_PRIVATE);
 
             image.compress(Bitmap.CompressFormat.PNG, 100, fos);
             fos.close();

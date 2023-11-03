@@ -73,9 +73,9 @@ public class FeatureFragment extends Fragment implements Injectable {
             if (image != null) {
                 whatsNewImage.setImageDrawable(viewThemeUtils.platform.tintDrawable(requireContext(), image, ColorRole.ON_PRIMARY));
             }*/
-            File filePath = this.getContext().getFileStreamPath("profile2333.png");
+            File filePath = this.getContext().getFileStreamPath("logoTest.png");
             if (filePath.exists()){
-                Bitmap testBitmap = readFromInternalStorage("profile2333.png");
+                Bitmap testBitmap = readFromInternalStorage("logoTest.png");
                 Log.d("Image File Found", "CONFIRMATION THAT THE BITMAP FILE IS FOUND AND READ"); //DEBUG MESSAGE
                 whatsNewImage.setImageBitmap(testBitmap);
             }

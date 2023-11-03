@@ -590,9 +590,9 @@ public class AuthenticatorActivity extends AccountAuthenticatorActivity
             }
         });
         ImageView logo = findViewById(R.id.thumbnail);
-        File filePath = getFileStreamPath("profile2333.png");
+        File filePath = getFileStreamPath("logoTest.png");
         if (filePath.exists()){
-            Bitmap testBitmap = readFromInternalStorage("profile2333.png");
+            Bitmap testBitmap = readFromInternalStorage("logoTest.png");
             Log.d("Image File Found", "CONFIRMATION THAT THE BITMAP FILE IS FOUND AND READ"); //DEBUG MESSAGE
             logo.setImageBitmap(testBitmap);
         }
