@@ -117,6 +117,12 @@ public class LoginThemeActivity extends AppCompatActivity {
                 startActivityForResult(galleryTest,GALLERY_REQUEST_CODE);
             }
         });
+        backButton.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginThemeActivity.this, AuthenticatorActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -177,13 +183,3 @@ public class LoginThemeActivity extends AppCompatActivity {
         return null;
     }
 }
-
-        backButton.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View v) {
-                Intent intent = new Intent(LoginThemeActivity.this, AuthenticatorActivity.class);
-                startActivity(intent);
-            }
-        });
-
-    }}
-
