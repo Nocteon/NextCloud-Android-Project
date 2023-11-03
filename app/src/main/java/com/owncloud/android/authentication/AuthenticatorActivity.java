@@ -55,6 +55,7 @@ import android.content.ServiceConnection;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Build;
@@ -74,6 +75,7 @@ import android.webkit.WebResourceRequest;
 import android.webkit.WebResourceResponse;
 import android.webkit.WebView;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.TextView.OnEditorActionListener;
 import android.widget.Toast;
@@ -133,6 +135,8 @@ import com.owncloud.android.utils.PermissionUtil;
 import com.owncloud.android.utils.theme.CapabilityUtils;
 import com.owncloud.android.utils.theme.ViewThemeUtils;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.InputStream;
 import java.net.URLDecoder;
 import java.util.HashMap;
@@ -565,6 +569,13 @@ public class AuthenticatorActivity extends AccountAuthenticatorActivity
                 startActivity(intent);
             }
         });
+        ImageView logo = findViewById(R.id.thumbnail);
+        File filePath = getFileStreamPath("profile2333.png");
+        if (filePath.exists()){
+            Bitmap testBitmap = readFromInternalStorage("profile2333.png");
+            Log.d("Image File Found", "CONFIRMATION THAT THE BITMAP FILE IS FOUND AND READ"); //DEBUG MESSAGE
+            logo.setImageBitmap(testBitmap);
+        }
 
         if (deviceInfo.hasCamera(this)) {
             accountSetupBinding.scanQr.setOnClickListener(v -> onScan());
@@ -1560,5 +1571,14 @@ public class AuthenticatorActivity extends AccountAuthenticatorActivity
     public void onThemeButtonClick(){
         Intent openThemePage = new Intent(this, LoginThemeActivity.class); /**Class needs to be changed to new activity class that I havent created yet*/
 
+    }
+    private Bitmap readFromInternalStorage(String filename){
+        try {
+            File filePath = getFileStreamPath(filename);
+            FileInputStream fi = new FileInputStream(filePath);
+            return BitmapFactory.decodeStream(fi);
+        } catch (Exception ex) { /* do nothing here */}
+
+        return null;
     }
 }

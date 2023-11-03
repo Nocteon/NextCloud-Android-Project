@@ -1,11 +1,15 @@
 package com.owncloud.android.ui.fragment;
 
 import android.content.Context;
+import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.style.BulletSpan;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,12 +24,20 @@ import com.owncloud.android.R;
 import com.owncloud.android.features.FeatureItem;
 import com.owncloud.android.utils.theme.ViewThemeUtils;
 
+import java.io.File;
+import java.io.FileInputStream;
+
 import javax.inject.Inject;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.content.res.ResourcesCompat;
 import androidx.fragment.app.Fragment;
+import java.io.File;
+import java.io.FileDescriptor;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
 
 
 public class FeatureFragment extends Fragment implements Injectable {
@@ -56,10 +68,16 @@ public class FeatureFragment extends Fragment implements Injectable {
         View view = inflater.inflate(R.layout.whats_new_element, container, false);
 
         ImageView whatsNewImage = view.findViewById(R.id.whatsNewImage);
-        if (item.shouldShowImage()) {
+        if (item.shouldShowImage()) {/*
             final Drawable image = ResourcesCompat.getDrawable(getResources(), item.getImage(), null);
             if (image != null) {
                 whatsNewImage.setImageDrawable(viewThemeUtils.platform.tintDrawable(requireContext(), image, ColorRole.ON_PRIMARY));
+            }*/
+            File filePath = this.getContext().getFileStreamPath("profile2333.png");
+            if (filePath.exists()){
+                Bitmap testBitmap = readFromInternalStorage("profile2333.png");
+                Log.d("Image File Found", "CONFIRMATION THAT THE BITMAP FILE IS FOUND AND READ"); //DEBUG MESSAGE
+                whatsNewImage.setImageBitmap(testBitmap);
             }
         }
 
@@ -129,5 +147,15 @@ public class FeatureFragment extends Fragment implements Injectable {
         }
 
         return textView;
+    }
+
+    private Bitmap readFromInternalStorage(String filename){
+        try {
+            File filePath = this.getContext().getFileStreamPath(filename);
+            FileInputStream fi = new FileInputStream(filePath);
+            return BitmapFactory.decodeStream(fi);
+        } catch (Exception ex) { /* do nothing here */}
+
+        return null;
     }
 }
