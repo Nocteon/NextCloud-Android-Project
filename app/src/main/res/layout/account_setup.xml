@@ -7,6 +7,7 @@
   Copyright (C) 2016 Nextcloud
   Copyright (C) 2019 Tobias Kaminsky
   Copyright (C) 2023 Ralph Calixte for FIU Senior Project
+  Copyright (C) 2023 Chabeli Castano for FIU Senior Project
 
   This program is free software; you can redistribute it and/or
   modify it under the terms of the GNU AFFERO GENERAL PUBLIC LICENSE
@@ -25,9 +26,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/scroll"
+    style="@android:style/Widget.DeviceDefault.ScrollView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center"
+    android:background="@drawable/theme_login_background"
     android:fillViewport="true"
     android:orientation="vertical">
 
@@ -75,12 +78,15 @@
                     style="@style/Widget.App.Login.TextInputLayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/auth_host_url"
+                    android:hint="@string/welcome_panther"
+                    android:textColorHint="@color/fiu_login_text_color"
                     android:theme="@style/TextInputLayoutLogin"
+                    app:boxStrokeColor="@color/fiu_login_text_color"
                     app:endIconContentDescription="@string/test_server_button"
                     app:endIconDrawable="@drawable/arrow_right"
                     app:endIconMode="custom"
-                    app:endIconTint="@color/login_text_color">
+                    app:endIconTint="@color/fiu_login_text_color"
+                    app:hintTextAppearance="@style/HintTextLogin">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/host_url_input"
@@ -94,7 +100,7 @@
                         android:paddingStart="@dimen/standard_padding"
                         android:paddingEnd="@dimen/alternate_padding_right"
                         android:scrollbars="vertical"
-                        android:textColor="@color/login_text_color">
+                        android:textColor="@color/fiu_login_text_color">
 
                         <requestFocus />
 
@@ -112,8 +118,8 @@
                 android:paddingTop="@dimen/standard_quarter_padding"
                 android:paddingEnd="@dimen/standard_half_padding"
                 android:paddingBottom="@dimen/standard_eight_padding"
-                android:text="@string/login_url_helper_text"
-                android:textColor="@color/white_helper_text" />
+                android:textColor="@color/fiu_login_text_color"
+                tools:text="@string/login_url_helper_text" />
 
             <TextView
                 android:id="@+id/server_status_text"
@@ -128,7 +134,7 @@
                 android:paddingEnd="@dimen/standard_eight_padding"
                 android:paddingBottom="@dimen/standard_eight_padding"
                 android:text="@string/auth_testing_connection"
-                android:textColor="@color/login_text_color"
+                android:textColor="@color/fiu_login_text_color"
                 android:visibility="invisible"
                 app:drawableStartCompat="@android:drawable/stat_notify_sync" />
 
@@ -144,17 +150,19 @@
                 android:paddingEnd="@dimen/standard_eight_padding"
                 android:paddingBottom="@dimen/standard_eight_padding"
                 android:text="@string/auth_unauthorized"
-                android:textColor="@color/login_text_color"
+                android:textColor="@color/fiu_login_text_color"
                 app:drawableStartCompat="@android:drawable/stat_notify_sync" />
 
             <ImageButton
                 android:id="@+id/scan_qr"
-                android:layout_width="wrap_content"
+                style="@style/Widget.AppCompat.ImageButton"
+                android:layout_width="101dp"
                 android:layout_height="wrap_content"
-                android:background="@color/transparent"
+                android:background="@android:color/transparent"
                 android:contentDescription="@string/scanQR_description"
                 android:src="@drawable/qrcode_scan"
-                android:theme="@style/Button.Login" />
+                android:visibility="visible"
+                tools:visibility="visible" />
 
         </LinearLayout>
 
@@ -170,13 +178,15 @@
 
             <Button
                 android:id="@+id/theme_button_login"
+                style="@style/Nextcloud.Material.TextButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textStyle="normal"
-                android:textSize="@dimen/login_theme_button_font_size"
+                android:backgroundTint="@color/theme_back_button_tint"
+                android:fontFamily="sans-serif-condensed"
                 android:text="@string/login_theme_button"
-                android:textColor="@color/login_text_color"
-                app:cornerRadius="@dimen/login_theme_button_corner_radius" />
+                android:textColor="@color/theme_back_button_text"
+                android:textSize="@dimen/login_theme_button_font_size"
+                android:textStyle="normal|bold" />
         </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

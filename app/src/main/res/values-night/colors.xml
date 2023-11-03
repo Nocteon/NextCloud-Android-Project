@@ -22,6 +22,8 @@
 -->
 <resources>
 
+    <color name="fiu_primary">@color/fiu_dark_blue</color>
+
     <color name="text_color">#E3E3E3</color>
     <color name="text_color_inverse">#000000</color>
     <color name="disabled_text">#ff6F6F6F</color>
@@ -55,4 +57,8 @@
     <color name="background_theme_button">@color/fiu_dark_blue</color>
     <color name="theme_back_button_tint">@color/fiu_dark_gold</color>
     <color name="theme_back_button_text">@color/fiu_dark_blue</color>
+
+    <color name="fiu_login_text_color">@color/fiu_light_gold</color>
+    <color name="fiu_light_gold_dark_blue">@color/fiu_dark_blue</color>
+    <color name="fiu_dark_gold_light_gold">@color/fiu_light_gold</color>
 </resources>

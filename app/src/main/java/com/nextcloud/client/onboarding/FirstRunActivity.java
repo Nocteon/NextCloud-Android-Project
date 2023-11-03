@@ -7,6 +7,7 @@
  * Copyright (C) 2015 ownCloud Inc.
  * Copyright (C) 2016 Nextcloud.
  * Copyright (C) 2019 Chris Narkiewicz <hello@ezaquarii.com>
+ * Copyright (C) 2023 Chabeli Castano for FIU Senior Project
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU AFFERO GENERAL PUBLIC LICENSE
@@ -78,7 +79,7 @@ public class FirstRunActivity extends BaseActivity implements ViewPager.OnPageCh
 
         super.onCreate(savedInstanceState);
         defaultViewThemeUtils = viewThemeUtilsFactory.withPrimaryAsBackground();
-        defaultViewThemeUtils.platform.themeStatusBar(this, ColorRole.PRIMARY);
+        //defaultViewThemeUtils.platform.themeStatusBar(this, ColorRole.PRIMARY);
         this.binding = FirstRunActivityBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
@@ -86,8 +87,8 @@ public class FirstRunActivity extends BaseActivity implements ViewPager.OnPageCh
 
         setSlideshowSize(getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE);
 
-
-        defaultViewThemeUtils.material.colorMaterialButtonFilledOnPrimary(binding.login);
+        // for FIU specific theme
+        binding.login.setBackgroundColor(getColor(R.color.theme_back_button_tint));
         binding.login.setOnClickListener(v -> {
             if (getIntent().getBooleanExtra(EXTRA_ALLOW_CLOSE, false)) {
                 Intent authenticatorActivityIntent = new Intent(this, AuthenticatorActivity.class);
@@ -99,7 +100,8 @@ public class FirstRunActivity extends BaseActivity implements ViewPager.OnPageCh
         });
 
 
-        defaultViewThemeUtils.material.colorMaterialButtonOutlinedOnPrimary(binding.signup);
+        //defaultViewThemeUtils.material.colorMaterialButtonOutlinedOnPrimary(binding.signup);
+        binding.signup.setBackgroundColor(getColor(R.color.theme_back_button_tint));
         binding.signup.setVisibility(isProviderOrOwnInstallationVisible ? View.VISIBLE : View.GONE);
         binding.signup.setOnClickListener(v -> {
             Intent authenticatorActivityIntent = new Intent(this, AuthenticatorActivity.class);
@@ -129,7 +131,6 @@ public class FirstRunActivity extends BaseActivity implements ViewPager.OnPageCh
         FeaturesViewAdapter featuresViewAdapter = new FeaturesViewAdapter(getSupportFragmentManager(), getFirstRun());
         binding.progressIndicator.setNumberOfSteps(featuresViewAdapter.getCount());
         binding.contentPanel.setAdapter(featuresViewAdapter);
-
         binding.contentPanel.addOnPageChangeListener(this);
     }
 

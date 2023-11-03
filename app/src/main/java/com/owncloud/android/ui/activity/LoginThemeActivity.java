@@ -26,6 +26,9 @@ import androidx.appcompat.app.AppCompatDelegate;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
@@ -38,8 +41,10 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.ScrollView;
 
 import com.owncloud.android.R;
+import com.owncloud.android.authentication.AuthenticatorActivity;
 
 import java.io.File;
 import java.io.FileDescriptor;
@@ -48,6 +53,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 
 public class LoginThemeActivity extends AppCompatActivity {
+    static String selectedOption;
     private final int GALLERY_REQUEST_CODE = 1000;
     ImageView imgTester;
     Bitmap imageBitmap;
@@ -57,13 +63,14 @@ public class LoginThemeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login_theme);
 
         RadioGroup radioGroup = findViewById(R.id.radioGroup);
+
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int checked) {
                 RadioButton radioButton = findViewById(checked);
 
                 if (radioButton != null) {
-                    String selectedOption = radioButton.getText().toString();
+                    selectedOption = radioButton.getText().toString();
 
                     if (selectedOption.equals("FIU Light")) {
                         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
@@ -72,10 +79,19 @@ public class LoginThemeActivity extends AppCompatActivity {
                     if (selectedOption.equals("FIU Dark")) {
                         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
                     }
+
                 }
 
             }
         });
+
+        /*
+        SharedPreferences preferences = getSharedPreferences("MyPreferences", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putInt("background", R.drawable.theme_login_background);
+        editor.apply();
+
+         */
 
         Button backButton = findViewById(R.id.backButton);
         // navigate back to previous activity
@@ -162,4 +178,12 @@ public class LoginThemeActivity extends AppCompatActivity {
     }
 }
 
+        backButton.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginThemeActivity.this, AuthenticatorActivity.class);
+                startActivity(intent);
+            }
+        });
+
+    }}
 

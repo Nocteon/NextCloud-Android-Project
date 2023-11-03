@@ -12,6 +12,7 @@
  * Copyright (C) 2017 Mario Danic
  * Copyright (C) 2023 TSI-mc
  * Copyright (C) 2023 Ralph Calixte for FIU Senior Project
+ * Copyright (C) 2023 Chabeli Castano for FIU Senior Project
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License version 2,
@@ -57,6 +58,8 @@ import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -76,6 +79,9 @@ import android.webkit.WebResourceResponse;
 import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.TextView.OnEditorActionListener;
 import android.widget.Toast;
@@ -151,6 +157,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.VisibleForTesting;
 import androidx.core.content.ContextCompat;
+import androidx.core.graphics.drawable.DrawableCompat;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -291,12 +298,15 @@ public class AuthenticatorActivity extends AccountAuthenticatorActivity
 
         // Workaround, for fixing a problem with Android Library Support v7 19
         //getWindow().requestFeature(Window.FEATURE_NO_TITLE);
+        /*
         if (getSupportActionBar() != null) {
             getSupportActionBar().hide();
             getSupportActionBar().setDisplayHomeAsUpEnabled(false);
             getSupportActionBar().setDisplayShowHomeEnabled(false);
             getSupportActionBar().setDisplayShowTitleEnabled(false);
         }
+
+         */
 
         mIsFirstAuthAttempt = true;
 
@@ -552,17 +562,27 @@ public class AuthenticatorActivity extends AccountAuthenticatorActivity
     private void initOverallUi() {
         accountSetupBinding.hostUrlContainer.setEndIconOnClickListener(v -> checkOcServer());
 
+
         accountSetupBinding.hostUrlInputHelperText.setText(
             String.format(getString(R.string.login_url_helper_text), getString(R.string.app_name)));
 
+        /*
         viewThemeUtils.platform.colorTextView(accountSetupBinding.hostUrlInputHelperText, ColorRole.ON_PRIMARY);
         viewThemeUtils.platform.colorTextView(accountSetupBinding.serverStatusText, ColorRole.ON_PRIMARY);
         viewThemeUtils.platform.colorTextView(accountSetupBinding.authStatusText, ColorRole.ON_PRIMARY);
         viewThemeUtils.material.colorTextInputLayout(accountSetupBinding.hostUrlContainer, ColorRole.ON_PRIMARY);
         viewThemeUtils.platform.colorEditTextOnPrimary(accountSetupBinding.hostUrlInput);
+         */
+
+        //Set the color for the Navigation Bar and the Status Bar
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            getWindow().setNavigationBarColor(ContextCompat.getColor(this, R.color.fiu_light_gold_dark_blue));
+            getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.fiu_light_gold_dark_blue));
+        }
 
         Button themeButton = (Button)findViewById(R.id.theme_button_login);
-        themeButton.setOnClickListener(new View.OnClickListener() { //Test Functionality 2
+
+        themeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(AuthenticatorActivity.this,LoginThemeActivity.class);
