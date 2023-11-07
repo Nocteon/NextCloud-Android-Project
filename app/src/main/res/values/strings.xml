@@ -1131,4 +1131,6 @@
     <string name="fiu_light">FIU Light</string>
     <string name="fiu_dark">FIU Dark</string>
     <string name="welcome_panther">Welcome Panther!</string>
+    <string name="upload">Upload</string>
+    <string name="back">Back</string>
 </resources>

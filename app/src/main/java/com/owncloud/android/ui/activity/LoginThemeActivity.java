@@ -17,6 +17,7 @@ package com.owncloud.android.ui.activity;
 
     You should have received a copy of the GNU Affero General Public
     License along with this program.  If not, see http://www.gnu.org/licenses/
+
  */
 
 import androidx.activity.result.contract.ActivityResultContracts;
@@ -85,13 +86,6 @@ public class LoginThemeActivity extends AppCompatActivity {
             }
         });
 
-        /*
-        SharedPreferences preferences = getSharedPreferences("MyPreferences", Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = preferences.edit();
-        editor.putInt("background", R.drawable.theme_login_background);
-        editor.apply();
-
-         */
 
         Button backButton = findViewById(R.id.backButton);
         // navigate back to previous activity
@@ -106,7 +100,6 @@ public class LoginThemeActivity extends AppCompatActivity {
             Log.d("Image File Found", "CONFIRMATION THAT THE BITMAP FILE IS FOUND AND READ"); //DEBUG MESSAGE
             imgTester.setImageBitmap(testBitmap);
         }
-
 
         Button uploadTester = findViewById(R.id.upload_tester);
         uploadTester.setOnClickListener(new View.OnClickListener() {
@@ -141,7 +134,6 @@ public class LoginThemeActivity extends AppCompatActivity {
     }
 
 
-    //FROM STACKOVERFLOW: https://stackoverflow.com/questions/38465377/make-uploaded-image-remain-after-layout-activity-change
     private void uriToBitmap(Uri selectedFileUri) {
         try {
             ParcelFileDescriptor parcelFileDescriptor =
@@ -155,8 +147,7 @@ public class LoginThemeActivity extends AppCompatActivity {
         }
     }
 
-
-    //FROM STACKOVERFLOW: https://stackoverflow.com/questions/38465377/make-uploaded-image-remain-after-layout-activity-change
+    // save image to internal storage to make it persistent
     private boolean saveToInternalStorage(Bitmap image) {
 
         try {
@@ -172,13 +163,12 @@ public class LoginThemeActivity extends AppCompatActivity {
     }
 
 
-    //FROM STACKOVERFLOW: https://stackoverflow.com/questions/38465377/make-uploaded-image-remain-after-layout-activity-change
     private Bitmap readFromInternalStorage(String filename){
         try {
             File filePath = this.getFileStreamPath(filename);
             FileInputStream fi = new FileInputStream(filePath);
             return BitmapFactory.decodeStream(fi);
-        } catch (Exception ex) { /* do nothing here */}
+        } catch (Exception ex) {}
 
         return null;
     }
