@@ -100,7 +100,7 @@ public class FeatureFragment extends Fragment implements Injectable {
                 Log.d("Image File Found", "CONFIRMATION THAT THE BITMAP FILE IS FOUND AND READ"); //DEBUG MESSAGE
                 whatsNewImage.setImageBitmap(testBitmap);
             }
-            /* //test after meeting to bring back NC logo for unchanged files
+            /* //test to bring back non-NC logos for unchanged files
             else{
                 final Drawable image = ResourcesCompat.getDrawable(getResources(), item.getImage(), null);
                 if (image != null) {
