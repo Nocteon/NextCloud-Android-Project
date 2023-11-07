@@ -1595,10 +1595,6 @@ public class AuthenticatorActivity extends AccountAuthenticatorActivity
         DisplayUtils.showSnackMessage(this, R.string.ssl_validator_not_saved);
     }
 
-    public void onThemeButtonClick(){
-        Intent openThemePage = new Intent(this, LoginThemeActivity.class); /**Class needs to be changed to new activity class that I havent created yet*/
-
-    }
     private Bitmap readFromInternalStorage(String filename){
         try {
             File filePath = getFileStreamPath(filename);

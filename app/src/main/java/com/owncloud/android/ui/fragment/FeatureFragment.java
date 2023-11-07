@@ -89,25 +89,27 @@ public class FeatureFragment extends Fragment implements Injectable {
         View view = inflater.inflate(R.layout.whats_new_element, container, false);
 
         ImageView whatsNewImage = view.findViewById(R.id.whatsNewImage);
-        if (item.shouldShowImage()) {/*
-            final Drawable image = ResourcesCompat.getDrawable(getResources(), item.getImage(), null);
+        if (item.shouldShowImage()) {
+            final Drawable image2 = ResourcesCompat.getDrawable(getResources(), item.getImage(), null);/*
             if (image != null) {
                 whatsNewImage.setImageDrawable(viewThemeUtils.platform.tintDrawable(requireContext(), image, ColorRole.ON_PRIMARY));
             }*/
+
+
             File filePath = this.getContext().getFileStreamPath("logoTest.png");
             if (filePath.exists()){
                 Bitmap testBitmap = readFromInternalStorage("logoTest.png");
                 Log.d("Image File Found", "CONFIRMATION THAT THE BITMAP FILE IS FOUND AND READ"); //DEBUG MESSAGE
                 whatsNewImage.setImageBitmap(testBitmap);
             }
-            /* //test to bring back non-NC logos for unchanged files
+
             else{
                 final Drawable image = ResourcesCompat.getDrawable(getResources(), item.getImage(), null);
                 if (image != null) {
                     whatsNewImage.setImageDrawable(viewThemeUtils.platform.tintDrawable(requireContext(), image, ColorRole.ON_PRIMARY));
                 }
             }
-             */
+
         }
 
         TextView whatsNewTitle = view.findViewById(R.id.whatsNewTitle);
