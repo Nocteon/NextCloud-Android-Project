@@ -38,7 +38,7 @@
     <ScrollView
         android:id="@+id/scrollableSortings"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="317dp"
         android:layout_weight="1">
 
         <TableLayout
@@ -69,14 +69,14 @@
                     android:layout_gravity="center_vertical"
                     android:layout_weight="1"
                     android:ellipsize="middle"
-                    android:singleLine="true"
-                    android:paddingBottom="@dimen/standard_half_padding"
-                    android:paddingEnd="@dimen/standard_double_padding"
                     android:paddingStart="@dimen/zero"
                     android:paddingTop="@dimen/standard_half_padding"
+                    android:paddingEnd="@dimen/standard_double_padding"
+                    android:paddingBottom="@dimen/standard_half_padding"
+                    android:singleLine="true"
                     android:text="@string/menu_item_sort_by_name_a_z"
                     android:textColor="@color/standard_grey"
-                    android:textSize="@dimen/two_line_primary_text_size"/>
+                    android:textSize="@dimen/two_line_primary_text_size" />
 
             </TableRow>
 
@@ -90,12 +90,12 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:background="@color/transparent"
-                    android:paddingBottom="@dimen/standard_half_padding"
+                    android:contentDescription="@string/sort_by_name_descending"
                     android:paddingStart="@dimen/standard_padding"
-                    android:paddingEnd="@dimen/standard_half_padding"
                     android:paddingTop="@dimen/standard_half_padding"
-                    android:src="@drawable/ic_alphabetical_desc"
-                    android:contentDescription="@string/sort_by_name_descending"/>
+                    android:paddingEnd="@dimen/standard_half_padding"
+                    android:paddingBottom="@dimen/standard_half_padding"
+                    android:src="@drawable/ic_alphabetical_desc" />
 
                 <TextView
                     android:id="@+id/sortByNameZAText"
@@ -104,14 +104,14 @@
                     android:layout_gravity="center_vertical"
                     android:layout_weight="1"
                     android:ellipsize="middle"
-                    android:singleLine="true"
-                    android:paddingBottom="@dimen/standard_half_padding"
-                    android:paddingEnd="@dimen/standard_double_padding"
                     android:paddingStart="@dimen/zero"
                     android:paddingTop="@dimen/standard_half_padding"
+                    android:paddingEnd="@dimen/standard_double_padding"
+                    android:paddingBottom="@dimen/standard_half_padding"
+                    android:singleLine="true"
                     android:text="@string/menu_item_sort_by_name_z_a"
                     android:textColor="@color/standard_grey"
-                    android:textSize="@dimen/two_line_primary_text_size"/>
+                    android:textSize="@dimen/two_line_primary_text_size" />
 
             </TableRow>
 
@@ -126,12 +126,12 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:background="@color/transparent"
-                    android:paddingBottom="@dimen/standard_half_padding"
+                    android:contentDescription="@string/sort_by_modification_date_descending"
                     android:paddingStart="@dimen/standard_padding"
-                    android:paddingEnd="@dimen/standard_half_padding"
                     android:paddingTop="@dimen/standard_half_padding"
-                    android:src="@drawable/ic_modification_desc"
-                    android:contentDescription="@string/sort_by_modification_date_descending"/>
+                    android:paddingEnd="@dimen/standard_half_padding"
+                    android:paddingBottom="@dimen/standard_half_padding"
+                    android:src="@drawable/ic_modification_desc" />
 
                 <TextView
                     android:id="@+id/sortByModificationDateNewestFirstText"
@@ -140,14 +140,14 @@
                     android:layout_gravity="center_vertical"
                     android:layout_weight="1"
                     android:ellipsize="middle"
-                    android:singleLine="true"
-                    android:paddingBottom="@dimen/standard_half_padding"
-                    android:paddingEnd="@dimen/standard_double_padding"
                     android:paddingStart="@dimen/zero"
                     android:paddingTop="@dimen/standard_half_padding"
+                    android:paddingEnd="@dimen/standard_double_padding"
+                    android:paddingBottom="@dimen/standard_half_padding"
+                    android:singleLine="true"
                     android:text="@string/menu_item_sort_by_date_newest_first"
                     android:textColor="@color/standard_grey"
-                    android:textSize="@dimen/two_line_primary_text_size"/>
+                    android:textSize="@dimen/two_line_primary_text_size" />
 
             </TableRow>
 
@@ -161,12 +161,12 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:background="@color/transparent"
-                    android:paddingBottom="@dimen/standard_half_padding"
+                    android:contentDescription="@string/sort_by_modification_date_ascending"
                     android:paddingStart="@dimen/standard_padding"
-                    android:paddingEnd="@dimen/standard_half_padding"
                     android:paddingTop="@dimen/standard_half_padding"
-                    android:src="@drawable/ic_modification_asc"
-                    android:contentDescription="@string/sort_by_modification_date_ascending"/>
+                    android:paddingEnd="@dimen/standard_half_padding"
+                    android:paddingBottom="@dimen/standard_half_padding"
+                    android:src="@drawable/ic_modification_asc" />
 
                 <TextView
                     android:id="@+id/sortByModificationDateOldestFirstText"
@@ -175,14 +175,14 @@
                     android:layout_gravity="center_vertical"
                     android:layout_weight="1"
                     android:ellipsize="middle"
-                    android:singleLine="true"
-                    android:paddingBottom="@dimen/standard_half_padding"
-                    android:paddingEnd="@dimen/standard_double_padding"
                     android:paddingStart="@dimen/zero"
                     android:paddingTop="@dimen/standard_half_padding"
+                    android:paddingEnd="@dimen/standard_double_padding"
+                    android:paddingBottom="@dimen/standard_half_padding"
+                    android:singleLine="true"
                     android:text="@string/menu_item_sort_by_date_oldest_first"
                     android:textColor="@color/standard_grey"
-                    android:textSize="@dimen/two_line_primary_text_size"/>
+                    android:textSize="@dimen/two_line_primary_text_size" />
 
             </TableRow>
 
@@ -198,12 +198,12 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:background="@color/transparent"
-                    android:paddingBottom="@dimen/standard_half_padding"
+                    android:contentDescription="@string/sort_by_size_descending"
                     android:paddingStart="@dimen/standard_padding"
-                    android:paddingEnd="@dimen/standard_half_padding"
                     android:paddingTop="@dimen/standard_half_padding"
-                    android:src="@drawable/ic_size_desc"
-                    android:contentDescription="@string/sort_by_size_descending"/>
+                    android:paddingEnd="@dimen/standard_half_padding"
+                    android:paddingBottom="@dimen/standard_half_padding"
+                    android:src="@drawable/ic_size_desc" />
 
                 <TextView
                     android:id="@+id/sortBySizeBiggestFirstText"
@@ -212,14 +212,14 @@
                     android:layout_gravity="center_vertical"
                     android:layout_weight="1"
                     android:ellipsize="middle"
-                    android:singleLine="true"
-                    android:paddingBottom="@dimen/standard_half_padding"
-                    android:paddingEnd="@dimen/standard_double_padding"
                     android:paddingStart="@dimen/zero"
                     android:paddingTop="@dimen/standard_half_padding"
+                    android:paddingEnd="@dimen/standard_double_padding"
+                    android:paddingBottom="@dimen/standard_half_padding"
+                    android:singleLine="true"
                     android:text="@string/menu_item_sort_by_size_biggest_first"
                     android:textColor="@color/standard_grey"
-                    android:textSize="@dimen/two_line_primary_text_size"/>
+                    android:textSize="@dimen/two_line_primary_text_size" />
 
             </TableRow>
 
@@ -233,12 +233,12 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:background="@color/transparent"
-                    android:paddingBottom="@dimen/standard_half_padding"
+                    android:contentDescription="@string/sort_by_size_ascending"
                     android:paddingStart="@dimen/standard_padding"
-                    android:paddingEnd="@dimen/standard_half_padding"
                     android:paddingTop="@dimen/standard_half_padding"
-                    android:src="@drawable/ic_size_asc"
-                    android:contentDescription="@string/sort_by_size_ascending"/>
+                    android:paddingEnd="@dimen/standard_half_padding"
+                    android:paddingBottom="@dimen/standard_half_padding"
+                    android:src="@drawable/ic_size_asc" />
 
                 <TextView
                     android:id="@+id/sortBySizeSmallestFirstText"
@@ -247,15 +247,51 @@
                     android:layout_gravity="center_vertical"
                     android:layout_weight="1"
                     android:ellipsize="middle"
-                    android:singleLine="true"
-                    android:paddingBottom="@dimen/standard_half_padding"
-                    android:paddingEnd="@dimen/standard_double_padding"
                     android:paddingStart="@dimen/zero"
                     android:paddingTop="@dimen/standard_half_padding"
+                    android:paddingEnd="@dimen/standard_double_padding"
+                    android:paddingBottom="@dimen/standard_half_padding"
+                    android:singleLine="true"
                     android:text="@string/menu_item_sort_by_size_smallest_first"
                     android:textColor="@color/standard_grey"
-                    android:textSize="@dimen/two_line_primary_text_size"/>
+                    android:textSize="@dimen/two_line_primary_text_size" />
 
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:visibility="visible" >
+
+                <ImageButton
+                    android:id="@+id/groupByKind"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:background="@color/transparent"
+                    android:contentDescription="@string/sort_by_size_ascending"
+                    android:paddingStart="@dimen/standard_padding"
+                    android:paddingTop="@dimen/standard_half_padding"
+                    android:paddingEnd="@dimen/standard_half_padding"
+                    android:paddingBottom="@dimen/standard_half_padding"
+                    android:src="@drawable/ic_size_asc" />
+
+                <TextView
+                    android:id="@+id/groupByKindText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:ellipsize="middle"
+                    android:paddingStart="@dimen/zero"
+                    android:paddingTop="@dimen/standard_half_padding"
+                    android:paddingEnd="@dimen/standard_double_padding"
+                    android:paddingBottom="@dimen/standard_half_padding"
+                    android:singleLine="true"
+                    android:text="@string/menu_item_sort_by_kind"
+                    android:textColor="@color/standard_grey"
+                    android:textSize="@dimen/two_line_primary_text_size" />
             </TableRow>
 
         </TableLayout>

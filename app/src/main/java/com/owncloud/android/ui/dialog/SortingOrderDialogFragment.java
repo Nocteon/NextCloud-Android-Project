@@ -88,7 +88,7 @@ public class SortingOrderDialogFragment extends DialogFragment implements Inject
     private void setupDialogElements(SortingOrderFragmentBinding binding) {
         viewThemeUtils.platform.colorTextButtons(binding.cancel);
 
-        mTaggedViews = new View[12];
+        mTaggedViews = new View[14];
         mTaggedViews[0] = binding.sortByNameAscending;
         mTaggedViews[0].setTag(FileSortOrder.sort_a_to_z);
         mTaggedViews[1] = binding.sortByNameAZText;
@@ -113,6 +113,10 @@ public class SortingOrderDialogFragment extends DialogFragment implements Inject
         mTaggedViews[10].setTag(FileSortOrder.sort_big_to_small);
         mTaggedViews[11] = binding.sortBySizeBiggestFirstText;
         mTaggedViews[11].setTag(FileSortOrder.sort_big_to_small);
+        mTaggedViews[12] = binding.groupByKind;
+        mTaggedViews[12].setTag(FileSortOrder.group_by_kind);
+        mTaggedViews[13] = binding.groupByKindText;
+        mTaggedViews[13].setTag(FileSortOrder.group_by_kind);
 
         setupActiveOrderSelection();
     }

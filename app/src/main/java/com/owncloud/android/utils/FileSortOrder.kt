@@ -42,7 +42,7 @@ open class FileSortOrder(@JvmField var name: String, var isAscending: Boolean) {
     }
 
     enum class SortType {
-        SIZE, ALPHABET, DATE
+        SIZE, ALPHABET, DATE, KIND
     }
 
     companion object {
@@ -52,6 +52,7 @@ open class FileSortOrder(@JvmField var name: String, var isAscending: Boolean) {
         const val sort_new_to_old_id = "sort_new_to_old"
         const val sort_small_to_big_id = "sort_small_to_big"
         const val sort_big_to_small_id = "sort_big_to_small"
+        const val sort_by_kind_id = "group_by_kind"
 
         @JvmField
         val sort_a_to_z: FileSortOrder = FileSortOrderByName(sort_a_to_z_id, true)
@@ -72,6 +73,9 @@ open class FileSortOrder(@JvmField var name: String, var isAscending: Boolean) {
         val sort_big_to_small: FileSortOrder = FileSortOrderBySize(sort_big_to_small_id, false)
 
         @JvmField
+        val group_by_kind: FileSortOrder = FileSortOrder(sort_by_kind_id, false)
+
+        @JvmField
         val sortOrders: Map<String, FileSortOrder> = Collections.unmodifiableMap(
             mapOf(
                 sort_a_to_z.name to sort_a_to_z,
@@ -79,7 +83,8 @@ open class FileSortOrder(@JvmField var name: String, var isAscending: Boolean) {
                 sort_old_to_new.name to sort_old_to_new,
                 sort_new_to_old.name to sort_new_to_old,
                 sort_small_to_big.name to sort_small_to_big,
-                sort_big_to_small.name to sort_big_to_small
+                sort_big_to_small.name to sort_big_to_small,
+                group_by_kind.name to group_by_kind
             )
         )
 
@@ -124,6 +129,8 @@ open class FileSortOrder(@JvmField var name: String, var isAscending: Boolean) {
 
             sort_new_to_old_id,
             sort_old_to_new_id -> SortType.DATE
+
+            sort_by_kind_id -> SortType.KIND
 
             else -> SortType.ALPHABET
         }
