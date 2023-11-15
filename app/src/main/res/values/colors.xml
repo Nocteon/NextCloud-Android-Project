@@ -24,7 +24,7 @@
     <color name="list_item_lastmod_and_filesize_text">@color/fiu_citron</color>
     <color name="black">@color/fiu_dark_blue</color>
     <color name="white">@color/fiu_powder</color>
-    <color name="white_helper_text">@color/fiu_parchment</color>
+    <color name="white_helper_text">@color/fiu_powder</color>
     <color name="text_color">@color/fiu_text_color</color>
     <color name="drawer_text_color">@color/fiu_secondary_text_color</color>
     <color name="text_color_inverse">@color/fiu_powder</color>

@@ -7,32 +7,56 @@
 
     <CalendarView
         android:id="@+id/calendar_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        style="@android:style/Widget.DeviceDefault.CalendarView"
+        android:layout_width="409dp"
+        android:layout_height="345dp"
+        android:dateTextAppearance="@style/TextAppearance.AppCompat.Body1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.348"></CalendarView>
+        app:layout_constraintVertical_bias="0.295"></CalendarView>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/floatingActionButton"
         android:layout_width="60dp"
         android:layout_height="55dp"
         android:clickable="true"
-        android:contentDescription="add event to calendar"
+        android:contentDescription="@string/add_event_to_calendar"
         android:focusable="true"
         android:foregroundGravity="center"
         android:src="@drawable/calendar_plus"
         app:backgroundTint="@color/background_theme_button"
         app:layout_constraintBottom_toTopOf="@+id/calendar_view"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.912"
+        app:layout_constraintHorizontal_bias="0.915"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.886"
+        app:layout_constraintVertical_bias="0.62"
         app:srcCompat="@drawable/calendar_plus"
         tools:ignore="ImageContrastCheck" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="409dp"
+        android:layout_height="270dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/calendar_view" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="395dp"
+        android:layout_height="48dp"
+        android:text="test"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/calendar_view"
+        tools:text="TextView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

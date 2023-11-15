@@ -23,6 +23,7 @@ package com.owncloud.android.ui.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.CalendarView;
 import android.widget.Toast;
@@ -33,6 +34,7 @@ import com.owncloud.android.R;
 import java.util.Calendar;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.owncloud.android.utils.CalendarEvent;

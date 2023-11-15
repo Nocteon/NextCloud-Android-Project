@@ -24,17 +24,15 @@ import java.util.Date;
 
 public class CalendarEvent {
 
-    public CalendarEvent(String description, Date startDate, String location, String url) {
+    public CalendarEvent(String description, String startDate, String location) {
         this.description = description;
         this.startDate = startDate;
         this.location = location;
-        this.url = url;
     }
 
     private String description;
-    private Date startDate;
+    private String startDate;
     private String location;
-    private String url;
 
     public String getDescription() {
         return description;
@@ -44,11 +42,11 @@ public class CalendarEvent {
         this.description = description;
     }
 
-    public Date getStartDate() {
+    public String getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(Date startDate) {
+    public void setStartDate(String startDate) {
         this.startDate = startDate;
     }
 
@@ -60,11 +58,9 @@ public class CalendarEvent {
         this.location = location;
     }
 
-    public String getUrl() {
-        return url;
-    }
 
-    public void setUrl(String url) {
-        this.url = url;
+    @Override
+    public String toString() {
+        return  startDate + " -- " + description + " -- " + "Location: " + location;
     }
 }

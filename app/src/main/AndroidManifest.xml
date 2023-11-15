@@ -432,8 +432,7 @@
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:exported="true" />
         <activity android:name="com.owncloud.android.ui.activity.AddCalendarEventDialog"
-            android:configChanges="orientation|screenSize|keyboardHidden"
-            android:theme="@style/FallbackTheming.Dialog" />
+            android:configChanges="orientation|screenSize|keyboardHidden" />
         <activity
             android:name="com.nextcloud.client.onboarding.WhatsNewActivity"
             android:theme="@style/Theme.ownCloud.noActionBar.Login" />
