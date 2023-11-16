@@ -22,6 +22,7 @@ package com.owncloud.android.ui.activity;
 
 
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -31,11 +32,17 @@ import android.widget.Toast;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.owncloud.android.R;
 
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import com.owncloud.android.ui.helpers.DatabaseHelper;
+
 
 import com.owncloud.android.utils.CalendarEvent;
 
@@ -44,6 +51,8 @@ public class CalendarActivity extends AppCompatActivity {
     CalendarView calendarView;
     Calendar calendar;
     FloatingActionButton addActivityButton;
+    RecyclerView recyclerView;
+    List<String> eventList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,6 +77,29 @@ public class CalendarActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        recyclerView = findViewById(R.id.recyclerView);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(layoutManager);
+
+        DatabaseHelper databaseHelper = new DatabaseHelper(this);
+
+        eventList = databaseHelper.getDisplayableEvents("11/25/2023");
+
+
+
+        /*
+        eventList.add("test 1");
+        eventList.add("test 2");
+        eventList.add("test 3");
+        eventList.add("test 4");
+        eventList.add("test 5");
+
+         */
+
+        CalendarAdapter adapter = new CalendarAdapter(eventList);
+        recyclerView.setAdapter(adapter);
+
 
 
     }

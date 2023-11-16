@@ -130,7 +130,8 @@ public class AddCalendarEventDialog extends AppCompatActivity {
                     if (location.isEmpty()){
                         location = "no location provided";
                     }
-                    databaseHelper.saveEventDetails(description, dateAndTime, location);
+                    String displayableEvent = description + " -- " + dateAndTime + " -- " + location;
+                    databaseHelper.saveEventDetails(description, dateAndTime, location, displayableEvent);
                     //CalendarEvent calendarEvent = new CalendarEvent(description, dateAndTime, location);
                     //eventsList.add(calendarEvent);
 
@@ -164,6 +165,7 @@ public class AddCalendarEventDialog extends AppCompatActivity {
         }
     }
 
+    // parse date
     private static Date parseDate(String date) {
         try {
             return new SimpleDateFormat("yyyy/MM/dd HH:mm").parse(date);
