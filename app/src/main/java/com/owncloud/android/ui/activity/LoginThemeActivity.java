@@ -168,7 +168,7 @@ public class LoginThemeActivity extends AppCompatActivity {
             File filePath = this.getFileStreamPath(filename);
             FileInputStream fi = new FileInputStream(filePath);
             return BitmapFactory.decodeStream(fi);
-        } catch (Exception ex) {}
+        } catch (Exception e) {}
 
         return null;
     }

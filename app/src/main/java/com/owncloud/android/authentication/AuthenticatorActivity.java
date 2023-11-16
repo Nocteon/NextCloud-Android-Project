@@ -596,6 +596,10 @@ public class AuthenticatorActivity extends AccountAuthenticatorActivity
             Log.d("Image File Found", "CONFIRMATION THAT THE BITMAP FILE IS FOUND AND READ"); //DEBUG MESSAGE
             logo.setImageBitmap(testBitmap);
         }
+        else{
+            Drawable fiu_logo = getResources().getDrawable(R.drawable.fiu_alone);
+            logo.setImageDrawable(fiu_logo);
+        }
 
         if (deviceInfo.hasCamera(this)) {
             accountSetupBinding.scanQr.setOnClickListener(v -> onScan());

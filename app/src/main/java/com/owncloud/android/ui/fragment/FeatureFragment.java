@@ -90,7 +90,8 @@ public class FeatureFragment extends Fragment implements Injectable {
 
         ImageView whatsNewImage = view.findViewById(R.id.whatsNewImage);
         if (item.shouldShowImage()) {
-            final Drawable image2 = ResourcesCompat.getDrawable(getResources(), item.getImage(), null);/*
+            /*
+            final Drawable image = ResourcesCompat.getDrawable(getResources(), item.getImage(), null);
             if (image != null) {
                 whatsNewImage.setImageDrawable(viewThemeUtils.platform.tintDrawable(requireContext(), image, ColorRole.ON_PRIMARY));
             }*/
@@ -104,10 +105,8 @@ public class FeatureFragment extends Fragment implements Injectable {
             }
 
             else{
-                final Drawable image = ResourcesCompat.getDrawable(getResources(), item.getImage(), null);
-                if (image != null) {
-                    whatsNewImage.setImageDrawable(viewThemeUtils.platform.tintDrawable(requireContext(), image, ColorRole.ON_PRIMARY));
-                }
+                Drawable fiu_logo = getResources().getDrawable(R.drawable.fiu_alone);
+                whatsNewImage.setImageDrawable(fiu_logo);
             }
 
         }
