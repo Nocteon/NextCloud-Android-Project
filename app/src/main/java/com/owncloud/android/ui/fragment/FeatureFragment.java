@@ -199,5 +199,9 @@ public class FeatureFragment extends Fragment implements Injectable {
             Log.d("Image File Found", "CONFIRMATION THAT THE BITMAP FILE IS FOUND AND READ"); //DEBUG MESSAGE
             whatsNewImage.setImageBitmap(testBitmap);
         }
+        else{
+            Drawable fiu_logo = getResources().getDrawable(R.drawable.fiu_alone);
+            whatsNewImage.setImageDrawable(fiu_logo);
+        }
     }
 }

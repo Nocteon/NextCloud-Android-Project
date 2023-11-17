@@ -85,6 +85,14 @@ public class LoginThemeActivity extends AppCompatActivity {
 
             }
         });
+        //Set default radio button
+        int currentMode = AppCompatDelegate.getDefaultNightMode();
+
+        if(currentMode == AppCompatDelegate.MODE_NIGHT_NO)
+            radioGroup.check(R.id.radioButton);
+
+        if(currentMode == AppCompatDelegate.MODE_NIGHT_YES)
+            radioGroup.check(R.id.radioButton2);
 
 
         Button backButton = findViewById(R.id.backButton);
@@ -116,6 +124,17 @@ public class LoginThemeActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        Button resetButton = findViewById(R.id.loginThemeReset);
+        resetButton.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View view){
+                if(filePath.exists()){
+                    filePath.delete();
+                    imgTester.setImageResource(0);
+                }
+            }
+        });
+
     }
 
     @Override
