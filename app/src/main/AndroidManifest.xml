@@ -433,6 +433,8 @@
             android:exported="true" />
         <activity android:name="com.owncloud.android.ui.activity.AddCalendarEventDialog"
             android:configChanges="orientation|screenSize|keyboardHidden" />
+        <activity android:name="com.owncloud.android.ui.activity.DeleteModifyEvent"
+            android:configChanges="orientation|screenSize|keyboardHidden" />
         <activity
             android:name="com.nextcloud.client.onboarding.WhatsNewActivity"
             android:theme="@style/Theme.ownCloud.noActionBar.Login" />

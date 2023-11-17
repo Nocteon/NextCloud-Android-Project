@@ -22,29 +22,21 @@ package com.owncloud.android.ui.activity;
 
 
 import android.content.Intent;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.CalendarView;
-import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.owncloud.android.R;
+import com.owncloud.android.ui.helpers.DatabaseHelper;
 
-import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import com.owncloud.android.ui.helpers.DatabaseHelper;
-
-
-import com.owncloud.android.utils.CalendarEvent;
 
 public class CalendarActivity extends AppCompatActivity {
 
@@ -53,6 +45,7 @@ public class CalendarActivity extends AppCompatActivity {
     FloatingActionButton addActivityButton;
     RecyclerView recyclerView;
     List<String> eventList;
+    String selectedDate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,46 +54,38 @@ public class CalendarActivity extends AppCompatActivity {
 
         setContentView(R.layout.item_calendar);
         calendarView = findViewById(R.id.calendar_view);
+
         addActivityButton = findViewById(R.id.floatingActionButton);
+
         calendar = Calendar.getInstance();
 
-        calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
-            @Override
-            public void onSelectedDayChange(@NonNull CalendarView calendarView, int year, int month, int day) {
-                Toast.makeText(CalendarActivity.this,  (month + 1) + "/" + day + "/" + year, Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        addActivityButton.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View v){
-                Intent intent = new Intent(CalendarActivity.this, AddCalendarEventDialog.class);
-                startActivity(intent);
-            }
-        });
-
+        //set up the recyclerView to display calendar events
         recyclerView = findViewById(R.id.recyclerView);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
 
         DatabaseHelper databaseHelper = new DatabaseHelper(this);
 
-        eventList = databaseHelper.getDisplayableEvents("11/25/2023");
+        //when the user presses a date, show the corresponding events
+        calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
+            @Override
+            public void onSelectedDayChange(@NonNull CalendarView calendarView, int year, int month, int day) {
+                selectedDate = String.valueOf(month + 1) + "/" + String.valueOf(day) + "/" + String.valueOf(year);
 
+                eventList = databaseHelper.getDisplayableEvents(selectedDate);
 
+                CalendarAdapter adapter = new CalendarAdapter(eventList);
+                recyclerView.setAdapter(adapter);
+            }
+        });
 
-        /*
-        eventList.add("test 1");
-        eventList.add("test 2");
-        eventList.add("test 3");
-        eventList.add("test 4");
-        eventList.add("test 5");
-
-         */
-
-        CalendarAdapter adapter = new CalendarAdapter(eventList);
-        recyclerView.setAdapter(adapter);
-
-
+        // Add Event Button
+        addActivityButton.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                Intent intent = new Intent(CalendarActivity.this, AddCalendarEventDialog.class);
+                startActivity(intent);
+            }
+        });
 
     }
 

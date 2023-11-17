@@ -21,6 +21,7 @@ package com.owncloud.android.ui.activity;
  */
 
 import android.app.TimePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -56,6 +57,7 @@ public class AddCalendarEventDialog extends AppCompatActivity {
     private FloatingActionButton timePickerButton;
     private Calendar calendar;
     private Button addButton;
+    private Button cancelButton;
     public static ArrayList<CalendarEvent>  eventsList = new ArrayList<>();
     //instance of DatabaseHelper
     DatabaseHelper databaseHelper = new DatabaseHelper(this);
@@ -132,13 +134,26 @@ public class AddCalendarEventDialog extends AppCompatActivity {
                     }
                     String displayableEvent = description + " -- " + dateAndTime + " -- " + location;
                     databaseHelper.saveEventDetails(description, dateAndTime, location, displayableEvent);
-                    //CalendarEvent calendarEvent = new CalendarEvent(description, dateAndTime, location);
-                    //eventsList.add(calendarEvent);
-
-
+                    editTextDesc.setText(null);
+                    editTextDate.setText(null);
+                    editTextTime.setText(null);
+                    editTextLoc.setText(null);
+                    Intent intent = new Intent(AddCalendarEventDialog.this, CalendarActivity.class);
+                    startActivity(intent);
                 }
             }
         });
+
+        //cancel button
+        cancelButton = findViewById(R.id.cancelButton);
+
+        cancelButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
+
 
     }
 

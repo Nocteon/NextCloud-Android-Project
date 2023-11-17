@@ -106,16 +106,16 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
         android:layout_marginTop="64dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="32dp"
         android:backgroundTint="@color/theme_back_button_tint"
-        android:text="@string/add"
+        android:text="@string/save_changes"
         android:textColor="@color/theme_back_button_text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.847"
         app:layout_constraintStart_toEndOf="@+id/cancelButton"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayoutLocation"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.004" />
 
     <Button
         android:id="@+id/cancelButton"
@@ -123,9 +123,9 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="32dp"
         android:layout_marginTop="64dp"
-        android:layout_marginEnd="145dp"
+        android:layout_marginEnd="76dp"
         android:backgroundTint="@color/theme_back_button_tint"
         android:text="@string/common_cancel"
         android:textColor="@color/theme_back_button_text"
@@ -139,7 +139,7 @@
         android:id="@+id/modifyEventTextView"
         android:layout_width="240dp"
         android:layout_height="52dp"
-        android:text="@string/new_event"
+        android:text="@string/modify_event"
         android:textAlignment="center"
         android:textColor="@color/fiu_primary_button_background_color"
         android:textSize="32sp"
@@ -147,6 +147,21 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="69dp"
+        android:layout_height="67dp"
+        android:layout_marginStart="32dp"
+        android:background="@color/fiu_light_gold"
+        android:contentDescription="@string/delete_event"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.053"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cancelButton"
+        app:layout_constraintVertical_bias="0.748"
+        app:srcCompat="@drawable/fiu_trash_bin" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
