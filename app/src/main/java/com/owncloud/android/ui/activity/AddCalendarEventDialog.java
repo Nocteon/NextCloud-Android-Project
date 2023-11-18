@@ -21,13 +21,19 @@ package com.owncloud.android.ui.activity;
  */
 
 import android.app.TimePickerDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.Gravity;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
@@ -61,6 +67,9 @@ public class AddCalendarEventDialog extends AppCompatActivity {
     public static ArrayList<CalendarEvent>  eventsList = new ArrayList<>();
     //instance of DatabaseHelper
     DatabaseHelper databaseHelper = new DatabaseHelper(this);
+    String userId;
+    UserInfoForCalendarActivity uic;
+    DateTimeHelper dth;
 
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -68,62 +77,35 @@ public class AddCalendarEventDialog extends AppCompatActivity {
 
         setContentView(R.layout.add_calendar_event);
 
+        dth = new DateTimeHelper();
+
         //Date Validation
         editTextDate = findViewById(R.id.editTextDate);
-        editTextDate.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence charSequence, int start, int before, int count) {
-            }
+        dth.validateDate(editTextDate);
 
-            @Override
-            public void onTextChanged(CharSequence charSequence, int start, int before, int count) {
-            }
-
-            @Override
-            public void afterTextChanged(Editable editable) {
-                // Perform date validation after text changes
-                validateDateInput(editable.toString());
-            }
-        });
 
         //Time Picker
         editTextTime = findViewById(R.id.editTextTime);
-        timePickerButton = findViewById(R.id.floatingActionButtonTime);
+        timePickerButton = findViewById(R.id.timePickerButton);
 
-        timePickerButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                final Calendar calendar = Calendar.getInstance();
-                int hour = calendar.get(Calendar.HOUR_OF_DAY);
-                int min = calendar.get(Calendar.MINUTE);
-
-                TimePickerDialog timePickerDialog = new TimePickerDialog(AddCalendarEventDialog.this, R.style.FIUTimePickerDialogTheme, new TimePickerDialog.OnTimeSetListener() {
-                    @Override
-                    public void onTimeSet(TimePicker timePicker, int hourOfDay, int minute) {
-                        //make sure that the time have the right format
-                        String selectedTime = String.format("%02d:%02d", hourOfDay, minute);
-                        editTextTime.setText(selectedTime);
-                    }
-                }, hour, min, false);
-                timePickerDialog.show();
-            }
-        });
+        dth.displayTimePicker(editTextTime, timePickerButton, AddCalendarEventDialog.this);
 
         //Add button
         addButton = findViewById(R.id.addButton);
         editTextDesc = findViewById(R.id.editTextDesc);
         editTextLoc = findViewById(R.id.editTextLocation);
 
+        String message = com.owncloud.android.operations.RefreshFolderOperation.getMessage();
+
+        uic = new UserInfoForCalendarActivity(message);
+        userId = uic.getIdFromMessage(message);
+
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //first, verify that the fields were filled
                 if ((editTextDesc.getText().toString().isEmpty()) || (editTextDate.getText().toString().isEmpty()) || (editTextTime.getText().toString().isEmpty())){
-                    Toast toast = new Toast(getApplicationContext());
-                    toast.setGravity(Gravity.BOTTOM, 0, 0);
-                    toast.setDuration(Toast.LENGTH_SHORT);
-                    toast.setText("Description, date and time are mandatory fields");
-                    toast.show();
+                    dth.toastForMissingMandatoryFields(AddCalendarEventDialog.this);
                 }
                 else {
                     String description = editTextDesc.getText().toString();
@@ -132,8 +114,9 @@ public class AddCalendarEventDialog extends AppCompatActivity {
                     if (location.isEmpty()){
                         location = "no location provided";
                     }
-                    String displayableEvent = description + " -- " + dateAndTime + " -- " + location;
-                    databaseHelper.saveEventDetails(description, dateAndTime, location, displayableEvent);
+                    String displayableEvent = "Event: " + description + " - " + editTextDate.getText().toString() + " at " + editTextTime.getText().toString()
+                        + " - Location: " + location;
+                    databaseHelper.saveEventDetails(description, dateAndTime, location, displayableEvent, userId);
                     editTextDesc.setText(null);
                     editTextDate.setText(null);
                     editTextTime.setText(null);
@@ -146,46 +129,13 @@ public class AddCalendarEventDialog extends AppCompatActivity {
 
         //cancel button
         cancelButton = findViewById(R.id.cancelButton);
-
         cancelButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 finish();
             }
         });
-
-
     }
 
-    // function to validate the date entered by the user
-    private void validateDateInput(String dateInput) {
-        String regexDate = "^(0[1-9]|1[0-2])/(0[1-9]|[1-2][0-9]|3[0-1])/(20)\\d\\d$";
-        Pattern pattern = Pattern.compile(regexDate);
 
-        if (dateInput != null) {
-            //Check if the input string is in the allowed format
-            Matcher matcher = pattern.matcher(dateInput);
-
-            boolean isAMatch = matcher.find();
-        }
-        Matcher matcher = pattern.matcher(dateInput);
-
-        boolean isAMatch = matcher.find();
-        if (isAMatch) {
-            //clear any previous errors
-            editTextDate.setError(null);
-        } else {
-            //display error message
-            editTextDate.setError("Invalid format.\nPlease, use mm/dd/yyyy");
-        }
-    }
-
-    // parse date
-    private static Date parseDate(String date) {
-        try {
-            return new SimpleDateFormat("yyyy/MM/dd HH:mm").parse(date);
-        } catch (ParseException pe){
-            return null;
-        }
-    }
 }

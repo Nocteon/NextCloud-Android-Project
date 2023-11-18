@@ -29,6 +29,7 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.owncloud.android.R;
+import com.owncloud.android.ui.helpers.DatabaseHelper;
 
 import java.util.List;
 
@@ -37,6 +38,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class CalendarAdapter extends RecyclerView.Adapter<CalendarEventViewHolder> {
     private List<String> eventList;
+    DatabaseHelper databaseHelper;
+    UserInfoForCalendarActivity uic;
+    String user;
 
     public CalendarAdapter(List<String> eventList) {
         this.eventList = eventList;
@@ -59,7 +63,19 @@ public class CalendarAdapter extends RecyclerView.Adapter<CalendarEventViewHolde
             @Override
             public void onClick(View view) {
                 Context context = view.getContext();
+
+                databaseHelper = new DatabaseHelper(context);
+
+                String eventDisplay = holder.textViewItem.getText().toString();
+
+                String message = com.owncloud.android.operations.RefreshFolderOperation.getMessage();
+                uic = new UserInfoForCalendarActivity(message);
+                user = uic.getIdFromMessage(message);
+
                 Intent intent = new Intent(context, DeleteModifyEvent.class);
+
+                String[] clickedEventDetails = databaseHelper.getInfoBasedOnDisplayedEvent(eventDisplay, user);
+                intent.putExtra("eventDetails", clickedEventDetails);
                 context.startActivity(intent);
             }
         });

@@ -67,7 +67,7 @@
             tools:ignore="VisualLintTextFieldSize" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/floatingActionButtonTime"
+            android:id="@+id/timePickerButton"
             android:layout_width="153dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -100,12 +100,12 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/addButton"
+        android:id="@+id/saveChangesButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
         android:backgroundTint="@color/theme_back_button_tint"
         android:text="@string/save_changes"
@@ -124,13 +124,13 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="76dp"
         android:backgroundTint="@color/theme_back_button_tint"
         android:text="@string/common_cancel"
         android:textColor="@color/theme_back_button_text"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/addButton"
+        app:layout_constraintEnd_toStartOf="@+id/saveChangesButton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayoutLocation"
         app:layout_constraintVertical_bias="0.0" />
@@ -149,7 +149,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/deleteImageButton"
         android:layout_width="69dp"
         android:layout_height="67dp"
         android:layout_marginStart="32dp"
@@ -157,10 +157,10 @@
         android:contentDescription="@string/delete_event"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.053"
+        app:layout_constraintHorizontal_bias="0.061"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cancelButton"
-        app:layout_constraintVertical_bias="0.748"
+        app:layout_constraintVertical_bias="0.2"
         app:srcCompat="@drawable/fiu_trash_bin" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

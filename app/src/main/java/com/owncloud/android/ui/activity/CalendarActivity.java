@@ -30,6 +30,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.owncloud.android.R;
 import com.owncloud.android.ui.helpers.DatabaseHelper;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
@@ -46,6 +47,8 @@ public class CalendarActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     List<String> eventList;
     String selectedDate;
+    String userId;
+    UserInfoForCalendarActivity uic;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,15 +69,31 @@ public class CalendarActivity extends AppCompatActivity {
 
         DatabaseHelper databaseHelper = new DatabaseHelper(this);
 
+        String message = com.owncloud.android.operations.RefreshFolderOperation.getMessage();
+
+        uic = new UserInfoForCalendarActivity(message);
+        userId = uic.getIdFromMessage(message);
+
+
         //when the user presses a date, show the corresponding events
         calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
             public void onSelectedDayChange(@NonNull CalendarView calendarView, int year, int month, int day) {
-                selectedDate = String.valueOf(month + 1) + "/" + String.valueOf(day) + "/" + String.valueOf(year);
-
-                eventList = databaseHelper.getDisplayableEvents(selectedDate);
+                eventList = new ArrayList<>();
+                String monthS = String.valueOf(month + 1);
+                String dayS = String.valueOf(day);
+                String formattedMonth = monthS.length() == 1 ? "0" + monthS : monthS;
+                String formattedDay = dayS.length() == 1 ? "0" + dayS : dayS;
+                selectedDate = formattedMonth + "/" + formattedDay + "/" + String.valueOf(year);
+                if(userId.equals("error")) {
+                    eventList.add("Error Displaying events. Please, verify that you're signed in");
+                }
+                else {
+                    eventList = databaseHelper.getDisplayableEvents(selectedDate, userId);
+                }
 
                 CalendarAdapter adapter = new CalendarAdapter(eventList);
+                adapter.notifyDataSetChanged();
                 recyclerView.setAdapter(adapter);
             }
         });
@@ -87,6 +106,7 @@ public class CalendarActivity extends AppCompatActivity {
             }
         });
 
-    }
 
+    }
 }
+
