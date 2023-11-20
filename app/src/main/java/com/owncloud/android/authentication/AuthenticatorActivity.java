@@ -7,6 +7,7 @@
  * @author Mario Danic
  * @author TSI-mc
  * @author Ralph Calixte
+ * @author Chabeli Castano
  * Copyright (C) 2012  Bartek Przybylski
  * Copyright (C) 2015 ownCloud Inc.
  * Copyright (C) 2017 Mario Danic
