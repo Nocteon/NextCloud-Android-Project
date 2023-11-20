@@ -522,7 +522,10 @@ public abstract class DrawerActivity extends ToolbarActivity
             startActivity(SettingsActivity.class);
         } else if (itemId == R.id.nav_community) {
             startActivity(CommunityActivity.class);
-        } else if (itemId == R.id.nav_logout) {
+        } else if (itemId == R.id.nav_calendar){
+            startActivity(CalendarActivity.class);
+        }
+        else if (itemId == R.id.nav_logout) {
             mCheckedMenuItem = -1;
             menuItem.setChecked(false);
             final Optional<User> optionalUser = getUser();

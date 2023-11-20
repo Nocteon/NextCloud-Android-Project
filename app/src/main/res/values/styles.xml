@@ -39,6 +39,7 @@
         <item name="searchViewStyle">@style/ownCloud.SearchView</item>
         <item name="android:actionModeBackground">@color/action_mode_background</item>
         <item name="android:datePickerDialogTheme">@style/FallbackDatePickerDialogTheme</item>
+        <item name="android:timePickerDialogTheme">@style/FIUTimePickerDialogTheme</item>
         <item name="android:navigationBarColor">@color/bg_default</item>
         <item name="textInputStyle">@style/Widget.App.TextInputLayout</item>
         <item name="dialogCornerRadius">@dimen/dialogBorderRadius</item>
@@ -82,10 +83,10 @@
 
     <style name="FallbackDatePickerDialogTheme" parent="Theme.Material3.DayNight.Dialog">
         <item name="colorPrimary">@color/bg_default</item>
-        <item name="colorAccent">@color/bg_fallback_highlight</item>
+        <item name="colorAccent">@color/theme_back_button_text</item>
         <item name="android:textAllCaps">false</item>
         <item name="android:windowBackground">@color/bg_default</item>
-        <item name="android:textColor">@color/fg_inverse</item>
+        <item name="android:textColor">@color/fiu_login_text_color</item>
         <item name="android:datePickerStyle">@style/DatePickerStyle</item>
     </style>
 
@@ -507,5 +508,26 @@
         <!-- Required -->
         <item name="postSplashScreenTheme">@style/Theme.ownCloud.Launcher</item>
     </style>
+
+    <!-- Time Picker -->
+    <style name="FIUTimePickerDialogTheme" parent="Theme.AppCompat.Light.Dialog">
+        <!-- Text color of the time numbers -->
+        <item name="android:textColorPrimary">@color/theme_back_button_tint</item>
+        <!-- Text color of the AM/PM label -->
+        <item name="android:textColorSecondary">@color/theme_back_button_text</item>
+        <!-- Background color of the time picker -->
+        <item name="android:headerBackground">@color/fiu_light_gold_dark_blue</item>
+        <item name="colorAccent">@color/fiu_light_gold_dark_blue</item>
+        <item name="colorControlActivated">@color/fiu_light_gold_dark_blue</item>
+        <item name="android:selectableItemBackgroundBorderless">@color/theme_back_button_tint</item>
+        <item name="colorControlHighlight">#d50000</item>
+        <item name="android:buttonBarButtonStyle">@style/PickerButtonsStyle</item>
+    </style>
+
+    <style name="PickerButtonsStyle" parent="Theme.AppCompat.Light.Dialog">
+        <item name="android:textColor">@color/theme_back_button_tint</item>
+        <item name="android:backgroundTint">@color/theme_back_button_text</item>
+</style>
+
 
 </resources>

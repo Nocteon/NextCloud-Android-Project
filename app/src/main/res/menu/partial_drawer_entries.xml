@@ -75,6 +75,11 @@
             android:orderInCategory="2"
             android:title="@string/drawer_item_uploads_list"/>
         <item
+            android:id="@+id/nav_calendar"
+            android:icon="@drawable/file_calendar"
+            android:orderInCategory="2"
+            android:title="Calendar"/>
+        <item
             android:id="@+id/nav_trashbin"
             android:icon="@drawable/nav_trashbin"
             android:orderInCategory="2"
