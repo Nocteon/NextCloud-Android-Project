@@ -32,6 +32,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.ParcelFileDescriptor;
@@ -101,12 +102,16 @@ public class LoginThemeActivity extends AppCompatActivity {
 
         imgTester = findViewById(R.id.image_tester);
 
-        //imageView experimental work
+        //setting imageView
         File filePath = this.getFileStreamPath("logoTest.png");
         if (filePath.exists()){
             Bitmap testBitmap = readFromInternalStorage("logoTest.png");
             Log.d("Image File Found", "CONFIRMATION THAT THE BITMAP FILE IS FOUND AND READ"); //DEBUG MESSAGE
             imgTester.setImageBitmap(testBitmap);
+        }
+        else{
+            Drawable fiu_logo = getResources().getDrawable(R.drawable.fiu_alone);
+            imgTester.setImageDrawable(fiu_logo);
         }
 
         Button uploadTester = findViewById(R.id.upload_tester);
@@ -130,7 +135,8 @@ public class LoginThemeActivity extends AppCompatActivity {
             public void onClick(View view){
                 if(filePath.exists()){
                     filePath.delete();
-                    imgTester.setImageResource(0);
+                    Drawable fiu_logo = getResources().getDrawable(R.drawable.fiu_alone);
+                    imgTester.setImageDrawable(fiu_logo);
                 }
             }
         });
