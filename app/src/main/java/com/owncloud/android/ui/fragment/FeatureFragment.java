@@ -1,11 +1,36 @@
 package com.owncloud.android.ui.fragment;
 
+/*
+    Nextcloud Android client application
+
+    Copyright (C) 2023 Ralph Calixte for FIU senior project
+    Copyright (C) 2023 Chabeli Castano for FIU senior project
+
+    This program is free software; you can redistribute it and/or
+    modify it under the terms of the GNU AFFERO GENERAL PUBLIC LICENSE
+    License as published by the Free Software Foundation; either
+    version 3 of the License, or any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU AFFERO GENERAL PUBLIC LICENSE for more details.
+
+    You should have received a copy of the GNU Affero General Public
+    License along with this program.  If not, see http://www.gnu.org/licenses/
+ */
+
 import android.content.Context;
+import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
+import android.media.Image;
 import android.os.Bundle;
 import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.style.BulletSpan;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,12 +45,20 @@ import com.owncloud.android.R;
 import com.owncloud.android.features.FeatureItem;
 import com.owncloud.android.utils.theme.ViewThemeUtils;
 
+import java.io.File;
+import java.io.FileInputStream;
+
 import javax.inject.Inject;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.content.res.ResourcesCompat;
 import androidx.fragment.app.Fragment;
+import java.io.File;
+import java.io.FileDescriptor;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
 
 
 public class FeatureFragment extends Fragment implements Injectable {
@@ -57,10 +90,25 @@ public class FeatureFragment extends Fragment implements Injectable {
 
         ImageView whatsNewImage = view.findViewById(R.id.whatsNewImage);
         if (item.shouldShowImage()) {
+            /*
             final Drawable image = ResourcesCompat.getDrawable(getResources(), item.getImage(), null);
             if (image != null) {
                 whatsNewImage.setImageDrawable(viewThemeUtils.platform.tintDrawable(requireContext(), image, ColorRole.ON_PRIMARY));
+            }*/
+
+
+            File filePath = this.getContext().getFileStreamPath("logoTest.png");
+            if (filePath.exists()){
+                Bitmap testBitmap = readFromInternalStorage("logoTest.png");
+                Log.d("Image File Found", "CONFIRMATION THAT THE BITMAP FILE IS FOUND AND READ"); //DEBUG MESSAGE
+                whatsNewImage.setImageBitmap(testBitmap);
             }
+
+            else{
+                Drawable fiu_logo = getResources().getDrawable(R.drawable.fiu_alone);
+                whatsNewImage.setImageDrawable(fiu_logo);
+            }
+
         }
 
         TextView whatsNewTitle = view.findViewById(R.id.whatsNewTitle);
@@ -129,5 +177,31 @@ public class FeatureFragment extends Fragment implements Injectable {
         }
 
         return textView;
+    }
+
+    private Bitmap readFromInternalStorage(String filename){
+        try {
+            File filePath = this.getContext().getFileStreamPath(filename);
+            FileInputStream fi = new FileInputStream(filePath);
+            return BitmapFactory.decodeStream(fi);
+        } catch (Exception ex) { /* do nothing here */}
+
+        return null;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        File filePath = this.getContext().getFileStreamPath("logoTest.png");
+        ImageView whatsNewImage = getView().findViewById(R.id.whatsNewImage);
+        if (filePath.exists()){
+            Bitmap testBitmap = readFromInternalStorage("logoTest.png");
+            Log.d("Image File Found", "CONFIRMATION THAT THE BITMAP FILE IS FOUND AND READ"); //DEBUG MESSAGE
+            whatsNewImage.setImageBitmap(testBitmap);
+        }
+        else{
+            Drawable fiu_logo = getResources().getDrawable(R.drawable.fiu_alone);
+            whatsNewImage.setImageDrawable(fiu_logo);
+        }
     }
 }

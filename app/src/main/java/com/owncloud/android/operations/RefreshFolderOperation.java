@@ -136,6 +136,8 @@ public class RefreshFolderOperation extends RemoteOperation {
 
     private List<SynchronizeFileOperation> mFilesToSyncContents;
     // this will be used for every file when 'folder synchronization' replaces 'folder download'
+    private String message;
+    private static String pass_message;
 
 
     /**
@@ -287,13 +289,24 @@ public class RefreshFolderOperation extends RemoteOperation {
 
             RemoteOperationResult<UserInfo> result = new GetUserProfileOperation(mStorageManager).execute(nextcloudClient);
             if (!result.isSuccess()) {
-                Log_OC.w(TAG, "Couldn't update user profile from server");
+                message = "Couldn't update user profile from server";
+                pass_message = "no_user_retrieved";
+                Log_OC.w(TAG, message);
             } else {
-                Log_OC.i(TAG, "Got display name: " + result.getResultData());
+                message = "Got display name: " + result.getResultData();
+                pass_message = "" + result.getResultData().getId();
+                Log_OC.i(TAG, message);
             }
         } catch (AccountUtils.AccountNotFoundException | NullPointerException e) {
-            Log_OC.e(this, "Error updating profile", e);
+            message = "Error updating profile";
+            pass_message = "no_user_retrieved";
+            Log_OC.e(this, message, e);
         }
+    }
+
+    //added by Chabeli Castano as part of FIU senior project 2023
+    public static String getMessage(){
+        return pass_message;
     }
 
     private void updateCapabilities() {

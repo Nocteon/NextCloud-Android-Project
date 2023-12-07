@@ -155,4 +155,9 @@
     <dimen name="adaptive_icon_size">108dp</dimen>
     <dimen name="adaptive_icon_padding">18dp</dimen>
     <dimen name="tag_height">18dp</dimen>
+    <dimen name="login_theme_button_outline">2dp</dimen> <!-- Outline for login theme button, not used at the last minute -->
+    <dimen name="login_theme_button_corner_radius">0dp</dimen>
+    <dimen name="login_theme_button_width">100dp</dimen>
+    <dimen name="login_theme_button_font_size">20dp</dimen>
+    <dimen name="login_theme_button_bottom_padding">24dp</dimen>
 </resources>

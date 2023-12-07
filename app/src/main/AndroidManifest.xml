@@ -106,6 +106,12 @@
             android:required="false" />
 
         <activity
+            android:name=".ui.activity.LoginThemeActivity"
+            android:theme="@style/Theme.ownCloud.Launcher"
+            android:exported="false"
+        />
+
+        <activity
             android:name=".ui.activity.FileDisplayActivity"
             android:configChanges="orientation|screenSize"
             android:exported="true"
@@ -421,6 +427,14 @@
             android:name=".ui.trashbin.TrashbinActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:exported="true" />
+        <activity
+            android:name="com.owncloud.android.ui.activity.CalendarActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:exported="true" />
+        <activity android:name="com.owncloud.android.ui.activity.AddCalendarEventDialog"
+            android:configChanges="orientation|screenSize|keyboardHidden" />
+        <activity android:name="com.owncloud.android.ui.activity.DeleteModifyEvent"
+            android:configChanges="orientation|screenSize|keyboardHidden" />
         <activity
             android:name="com.nextcloud.client.onboarding.WhatsNewActivity"
             android:theme="@style/Theme.ownCloud.noActionBar.Login" />

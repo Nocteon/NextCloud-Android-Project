@@ -17,6 +17,9 @@
     <string name="menu_item_sort_by_date_oldest_first">Oldest first</string>
     <string name="menu_item_sort_by_size_biggest_first">Biggest first</string>
     <string name="menu_item_sort_by_size_smallest_first">Smallest first</string>
+    <string name="menu_item_sort_by_kind">Group by kind</string>
+    <string name="clock">Time Picker</string>
+    <string name="delete_event">Delete Event</string>
 
     <string name="drawer_item_all_files">All files</string>
     <string name="drawer_item_home">Home</string>
@@ -1101,8 +1104,41 @@
     <string name="image_preview_unit_megapixel">%s MP</string>
     <string name="image_preview_filedetails">File details</string>
     <string name="image_preview_image_taking_conditions">Image taking conditions</string>
-    <string translatable="false" name="make_model">%1$s %2$s</string>
+    <string name="make_model" translatable="false">%1$s %2$s</string>
     <string name="sub_folder_rule_year">Year</string>
     <string name="sub_folder_rule_month">Year/Month</string>
     <string name="sub_folder_rule_day">Year/Month/Day</string>
+
+    <string name="login_theme_button">Theme</string>
+    <string name="title_activity_test">TestActivity</string>
+
+    <!-- Preference Titles -->
+    <string name="messages_header">Messages</string>
+    <string name="sync_header">Sync</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails</string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+    <string name="fiu_light">FIU Light</string>
+    <string name="fiu_dark">FIU Dark</string>
+    <string name="welcome_panther">Welcome Panther!</string>
+    <string name="upload">Upload</string>
+    <string name="back">Back</string>
+    <string name="location">Location</string>
+    <string name="add">Add</string>
+    <string name="date">Date</string>
+    <string name="event">Event</string>
+    <string name="description">Description</string>
+    <string name="add_event_to_calendar">add event to calendar</string>
+    <string name="modify_event">Modify Event</string>
+    <string name="save_changes">Save Changes</string>
+    <string name="new_event">New Event</string>
+    <string name="uploadText">Upload a replacement for the login screen logos</string>
+    <string name="loginThemeResetButton">Reset Logo</string>
 </resources>

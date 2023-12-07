@@ -992,6 +992,9 @@ public class OCFileListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
                 return dateFormat.format(date);
             case SIZE:
                 return DisplayUtils.bytesToHumanReadable(file.getFileLength());
+            case KIND:
+                String kind = file.getMimeType();
+                return kind.valueOf(file.getFileName().charAt(0)).toUpperCase(Locale.getDefault());
             default:
                 Log_OC.d(TAG, "getPopupText: Unsupported sort order: " + sortOrder.getType());
                 return "";

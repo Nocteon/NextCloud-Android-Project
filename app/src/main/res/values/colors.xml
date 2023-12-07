@@ -3,6 +3,7 @@
 
   Copyright (C) 2012 Bartek Przybylski
   Copyright (C) 2015 ownCloud Inc.
+  Copyright (C) 2015 Chabeli Castano for FIU Senior project
 
   This program is free software: you can redistribute it and/or modify
   it under the terms of the GNU General Public License version 2,
@@ -18,24 +19,26 @@
 -->
 <resources>
 
-    <color name="list_item_lastmod_and_filesize_text">@color/secondary_text_color</color>
-    <color name="black">#000000</color>
-    <color name="white">#ffffff</color>
-    <color name="white_helper_text">#B3FFFFFF</color>
-    <color name="text_color">#333333</color>
-    <color name="drawer_text_color">@color/secondary_text_color</color>
-    <color name="text_color_inverse">#ffffff</color>
-    <color name="disabled_text">#ff888888</color>
+    <color name="fiu_primary">@color/fiu_light_gold</color>
+
+    <color name="list_item_lastmod_and_filesize_text">@color/fiu_citron</color>
+    <color name="black">@color/fiu_dark_blue</color>
+    <color name="white">@color/fiu_powder</color>
+    <color name="white_helper_text">@color/fiu_powder</color>
+    <color name="text_color">@color/fiu_text_color</color>
+    <color name="drawer_text_color">@color/fiu_secondary_text_color</color>
+    <color name="text_color_inverse">@color/fiu_powder</color>
+    <color name="disabled_text">@color/fiu_airsupblue</color>
     <color name="list_divider_background">#eeeeee</color>
-    <color name="fg_inverse">#FFFFFF</color>
-    <color name="filelist_icon_background">#DDDDDD</color>
-    <color name="dark_background_text_color">#EEEEEE</color>
+    <color name="fg_inverse">@color/fiu_powder</color>
+    <color name="filelist_icon_background">@color/fiu_cadetgray</color>
+    <color name="dark_background_text_color">@color/fiu_light_gold</color>
     <color name="transparent">#00000000</color>
-    <color name="secondary_text_color">#666666</color>
-    <color name="highlight_textColor_Warning">#e53935</color>
+    <color name="secondary_text_color">@color/fiu_secondary_text_color</color>
+    <color name="highlight_textColor_Warning">#ea5f5d</color>
 
     <!-- Colors -->
-    <color name="standard_grey">#757575</color>
+    <color name="standard_grey">@color/fiu_airsupblue</color>
     <color name="actionbar_shadow">#222222</color>
     <color name="grey_200">#EEEEEE</color>
     <color name="grey_400">#BDBDBD</color>
@@ -46,23 +49,23 @@
     <color name="infolevel_warning">#e9322d</color>
 
     <!-- Colors -->
-    <color name="dark">#000000</color>
-    <color name="login_btn_tint">#ffffff</color>
-    <color name="login_btn_stroke">#ffffff</color>
-    <color name="bg_default">#FFFFFF</color>
-    <color name="background_color_inverse">#000000</color>
-    <color name="primary_button_background_color">@color/color_accent</color>
-    <color name="primary_button_text_color">#ffffff</color>
-    <color name="secondary_button_background_color">#D6D7D7</color>
-    <color name="secondary_button_text_color">#000000</color>
-    <color name="nc_grey">#ededed</color>
-    <color name="icon_on_nc_grey">#000000</color>
+    <color name="dark">@color/fiu_dark_blue</color>
+    <color name="login_btn_tint">@color/fiu_light_gold</color>
+    <color name="login_btn_stroke">@color/fiu_light_gold</color>
+    <color name="bg_default">@color/fiu_powder</color>
+    <color name="background_color_inverse">@color/fiu_dark_gold</color>
+    <color name="primary_button_background_color">@color/fiu_color_accent</color>
+    <color name="primary_button_text_color">@color/fiu_powder</color>
+    <color name="secondary_button_background_color">@color/fiu_cadetgray</color>
+    <color name="secondary_button_text_color">@color/fiu_dark_blue</color>
+    <color name="nc_grey">@color/fiu_cadetgray</color>
+    <color name="icon_on_nc_grey">@color/fiu_dark_blue</color>
 
-    <color name="process_dialog_background">#ffffff</color>
-    <color name="indicator_dot_selected">#ffffff</color>
-    <color name="drawer_shadow">#000000</color>
+    <color name="process_dialog_background">@color/fiu_powder</color>
+    <color name="indicator_dot_selected">@color/fiu_powder</color>
+    <color name="drawer_shadow">@color/fiu_dark_blue</color>
 
-    <color name="background_color_png">#FFFFFF</color>
+    <color name="background_color_png">@color/fiu_powder</color>
 
     <!-- special transparent action bar colors for image preview -->
     <color name="color_transparent">#201D2D44</color>
@@ -70,7 +73,7 @@
 
     <!-- Multiselect backgrounds -->
     <color name="action_mode_background">@color/fontAppbar</color>
-    <color name="selected_item_background">#ECECEC</color>
+    <color name="selected_item_background">@color/fiu_light_gold</color>
 
     <color name="drawer_menu_icon">#757575</color>
     <color name="bg_fallback_highlight">#616161</color>
@@ -79,5 +82,14 @@
     <!-- App bar -->
     <color name="appbar">@android:color/white</color>
     <color name="fontAppbar">#666666</color>
-    <color name="fontSecondaryAppbar">#A5A5A5</color>
+    <color name="fontSecondaryAppbar">@color/fiu_cadetgray</color>
+
+    <!--Login page theme button background -->
+    <color name="background_theme_button">@color/fiu_lighter_gold</color>
+    <color name="theme_back_button_tint">@color/fiu_dark_blue</color>
+    <color name="theme_back_button_text">@color/fiu_dark_gold</color>
+
+    <color name="fiu_login_text_color">@color/fiu_dark_blue</color>
+    <color name="fiu_light_gold_dark_blue">@color/fiu_light_gold</color>
+    <color name="fiu_dark_gold_light_gold">@color/fiu_dark_gold</color>
 </resources>
